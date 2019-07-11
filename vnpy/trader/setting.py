@@ -8,7 +8,7 @@ from .utility import load_json
 
 SETTINGS = {
     "font.family": "Arial",
-    "font.size": 10,
+    "font.size": 12,
 
     "log.active": True,
     "log.level": CRITICAL,
@@ -28,7 +28,7 @@ SETTINGS = {
     "database.driver": "sqlite",  # see database.Driver
     "database.database": "database.db",  # for sqlite, use this as filepath
     "database.host": "localhost",
-    "database.port": 3306,
+    "database.port": "27017",
     "database.user": "root",
     "database.password": "",
     "database.authentication_source": "admin",  # for mongodb

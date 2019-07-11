@@ -2,10 +2,11 @@
 Defines constants and objects used in CtaStrategy App.
 """
 
-
 from dataclasses import dataclass, field
 from enum import Enum
+
 from vnpy.trader.constant import Direction, Offset
+
 APP_NAME = "CtaStrategy"
 STOPORDER_PREFIX = "STOP"
 

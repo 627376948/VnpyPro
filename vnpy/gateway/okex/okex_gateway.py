@@ -1,4 +1,3 @@
-# encoding: UTF-8
 """
 """
 
@@ -77,6 +76,8 @@ class OkexGateway(BaseGateway):
         "代理地址": "",
         "代理端口": "",
     }
+
+    exchanges = [Exchange.OKEX]
 
     def __init__(self, event_engine):
         """Constructor"""

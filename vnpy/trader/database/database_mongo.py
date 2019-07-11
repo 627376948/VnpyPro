@@ -1,12 +1,33 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 from enum import Enum
-from typing import Sequence, Optional
+from typing import Optional, Sequence
+import time
 
 from mongoengine import DateTimeField, Document, FloatField, StringField, connect
-
+from pymongo import MongoClient
 from vnpy.trader.constant import Exchange, Interval
-from vnpy.trader.object import BarData, TickData
+from vnpy.trader.object import BarData, TickData, HistoryRequest
+from vnpy.trader.rqdata import rqdata_client
+from vnpy.trader.setting import SETTINGS
+import pandas as pd
+
 from .database import BaseDatabaseManager, Driver
+
+
+INTERVAL_VT2RQ = {
+    Interval.MINUTE: "1min",
+    #     Interval.FIVEMINUTE: "5min",
+    #     Interval.FIFTEENMINUTE: "15min",
+    #     Interval.THIRTYMINUTE: "30min",
+    Interval.HOUR: "60min",
+    Interval.DAILY: "1d",
+}
+
+INTERVAL_ADJUSTMENT_MAP = {
+    Interval.MINUTE: timedelta(minutes=1),
+    Interval.HOUR: timedelta(hours=1),
+    Interval.DAILY: timedelta()         # no need to adjust for daily bar
+}
 
 
 def init(_: Driver, settings: dict):
@@ -47,6 +68,7 @@ class DbBarData(Document):
     interval: str = StringField()
 
     volume: float = FloatField()
+    open_interest: float = FloatField()
     open_price: float = FloatField()
     high_price: float = FloatField()
     low_price: float = FloatField()
@@ -55,7 +77,7 @@ class DbBarData(Document):
     meta = {
         "indexes": [
             {
-                "fields": ("datetime", "interval", "symbol", "exchange"),
+                "fields": ("symbol", "exchange", "interval", "datetime"),
                 "unique": True,
             }
         ]
@@ -73,6 +95,7 @@ class DbBarData(Document):
         db_bar.datetime = bar.datetime
         db_bar.interval = bar.interval.value
         db_bar.volume = bar.volume
+        db_bar.open_interest = bar.open_interest
         db_bar.open_price = bar.open_price
         db_bar.high_price = bar.high_price
         db_bar.low_price = bar.low_price
@@ -90,6 +113,7 @@ class DbBarData(Document):
             datetime=self.datetime,
             interval=Interval(self.interval),
             volume=self.volume,
+            open_interest=self.open_interest,
             open_price=self.open_price,
             high_price=self.high_price,
             low_price=self.low_price,
@@ -112,6 +136,7 @@ class DbTickData(Document):
 
     name: str = StringField()
     volume: float = FloatField()
+    open_interest: float = FloatField()
     last_price: float = FloatField()
     last_volume: float = FloatField()
     limit_up: float = FloatField()
@@ -150,7 +175,7 @@ class DbTickData(Document):
     meta = {
         "indexes": [
             {
-                "fields": ("datetime", "symbol", "exchange"),
+                "fields": ("symbol", "exchange", "datetime"),
                 "unique": True,
             }
         ],
@@ -168,6 +193,7 @@ class DbTickData(Document):
         db_tick.datetime = tick.datetime
         db_tick.name = tick.name
         db_tick.volume = tick.volume
+        db_tick.open_interest = tick.open_interest
         db_tick.last_price = tick.last_price
         db_tick.last_volume = tick.last_volume
         db_tick.limit_up = tick.limit_up
@@ -215,6 +241,7 @@ class DbTickData(Document):
             datetime=self.datetime,
             name=self.name,
             volume=self.volume,
+            open_interest=self.open_interest,
             last_price=self.last_price,
             last_volume=self.last_volume,
             limit_up=self.limit_up,
@@ -255,6 +282,17 @@ class DbTickData(Document):
 
 
 class MongoManager(BaseDatabaseManager):
+    def __init__(self):
+        """"""
+        self.username = SETTINGS["database.user"]
+        self.password = SETTINGS["database.password"]
+        self.host = SETTINGS["database.host"]
+        self.port = SETTINGS["database.port"]
+        self.db_client = MongoClient(self.host, int(self.port))
+        self.authentication_source = SETTINGS["database.authentication_source"]
+        self.inited = False
+        self.symbols = set()
+
     def load_bar_data(
         self,
         symbol: str,
@@ -263,14 +301,67 @@ class MongoManager(BaseDatabaseManager):
         start: datetime,
         end: datetime,
     ) -> Sequence[BarData]:
-        s = DbBarData.objects(
-            symbol=symbol,
-            exchange=exchange.value,
-            interval=interval.value,
-            datetime__gte=start,
-            datetime__lte=end,
-        )
-        data = [db_bar.to_bar() for db_bar in s]
+        req = HistoryRequest(symbol, start=start, end=end,
+                             interval=interval, exchange=exchange)
+        data = rqdata_client.query_history(req)
+
+        _start = int(time.mktime(start.timetuple()))
+        _end = int(time.mktime(end.timetuple()))
+
+        rq_interval = INTERVAL_VT2RQ.get(interval)
+        if not rq_interval:
+            return []
+
+        # For adjust timestamp from bar close point (RQData) to open point (VN
+        # Trader)
+        adjustment = INTERVAL_ADJUSTMENT_MAP[interval]
+
+        # For querying night trading period data
+        if rq_interval == "1d":
+            if symbol[:2] == "15" or symbol[:2] == "51":
+                ls = [x for x in self.db_client["quantaxis"]["index_day"].find({
+                    "code": symbol,
+                    "date_stamp": {"$gte": _start, "$lte": _end}}, sort=[('date_stamp', 1)])]
+                df = pd.DataFrame(ls)
+            else:
+                ls = [x for x in self.db_client["quantaxis"]["stock_day"].find({
+                    "code": symbol,
+                    "date_stamp": {"$gte": _start, "$lte": _end}}, sort=[('date_stamp', 1)])]
+                df = pd.DataFrame(ls)
+        else:
+            if symbol[:2] == "15" or symbol[:2] == "51":
+                ls = [x for x in self.db_client["quantaxis"]["index_min"].find({"code": symbol,
+                                                                                "type": rq_interval,
+                                                                                "time_stamp": {"$gte": _start, "$lte": _end}}, sort=[('time_stamp', 1)])]
+                df = pd.DataFrame(ls)
+            else:
+                ls = [x for x in self.db_client["quantaxis"]["stock_min"].find({"code": symbol,
+                                                                                "type": rq_interval,
+                                                                                "time_stamp": {"$gte": _start, "$lte": _end}}, sort=[('time_stamp', 1)])]
+                df = pd.DataFrame(ls)
+
+        data: List[BarData] = []
+
+        if df is not None:
+            for ix, row in df.iterrows():
+                if rq_interval == "1d":
+                    d = datetime.fromtimestamp(row["date_stamp"])
+                else:
+                    d = datetime.fromtimestamp(row["time_stamp"])
+                bar = BarData(
+                    symbol=symbol,
+                    exchange=exchange,
+                    interval=interval,
+                    datetime=d - adjustment,
+                    open_price=row["open"],
+                    high_price=row["high"],
+                    low_price=row["low"],
+                    close_price=row["close"],
+                    volume=row["vol"],
+                    gateway_name="MongoDB"
+                )
+                data.append(bar)
+
         return data
 
     def load_tick_data(

@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//QUANTAXIS/QAFetch/QAQuery_Advance.py=utf-8
+encoding//QUANTAXIS/QAFetch/QATdx.py=utf-8
+encoding//QUANTAXIS/QASU/save_tdx.py=utf-8
+encoding//QUANTAXIS/QAUtil/Parallelism.py=utf-8
+encoding//QUANTAXIS/QAUtil/QAAuth.py=utf-8
+encoding//QUANTAXIS/QAUtil/QABar.py=utf-8
+encoding//QUANTAXIS/QAUtil/QACache.py=utf-8
+encoding//QUANTAXIS/QAUtil/QAMongo.py=utf-8
+encoding//QUANTAXIS/QAUtil/QASetting.py=utf-8
+encoding//QUANTAXIS/QAUtil/__init__.py=utf-8

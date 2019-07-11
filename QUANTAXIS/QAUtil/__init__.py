@@ -28,16 +28,18 @@ util tool
 # path
 
 # bar
+from functools import wraps
+from time import time as timestamp
+
+from QUANTAXIS.QAUtil.Parallelism import Parallelism, Parallelism_Thread
 from QUANTAXIS.QAUtil.QABar import (QA_util_make_hour_index,
                                     QA_util_make_min_index, QA_util_time_gap)
 from QUANTAXIS.QAUtil.QACache import QA_util_cache
-# config
+from QUANTAXIS.QAUtil.QACache import QA_util_cache
 from QUANTAXIS.QAUtil.QACfg import QA_util_cfg_initial, QA_util_get_cfg
-# code function
 from QUANTAXIS.QAUtil.QACode import QA_util_code_tolist, QA_util_code_tostr
-# csv
+from QUANTAXIS.QAUtil.QACode import QA_util_code_tostr, QA_util_code_tolist
 from QUANTAXIS.QAUtil.QACsv import QA_util_save_csv
-# date
 from QUANTAXIS.QAUtil.QADate import (QA_util_calc_time, QA_util_date_int2str,
                                      QA_util_date_stamp, QA_util_date_str2int,
                                      QA_util_date_today, QA_util_date_valid,
@@ -50,7 +52,14 @@ from QUANTAXIS.QAUtil.QADate import (QA_util_calc_time, QA_util_date_int2str,
                                      QA_util_time_now, QA_util_time_stamp,
                                      QA_util_to_datetime, QA_util_today_str,
                                      QATZInfo_CN)
-# trade date
+from QUANTAXIS.QAUtil.QADateTools import (
+    QA_util_getBetweenQuarter, QA_util_get_1st_of_next_month,
+    QA_util_add_months, QA_util_getBetweenMonth
+)
+from QUANTAXIS.QAUtil.QADateTools import (QA_util_add_months,
+                                          QA_util_get_1st_of_next_month,
+                                          QA_util_getBetweenMonth,
+                                          QA_util_getBetweenQuarter)
 from QUANTAXIS.QAUtil.QADate_trade import (QA_util_date_gap,
                                            QA_util_format_date2str,
                                            QA_util_future_to_realdatetime,
@@ -78,76 +87,61 @@ from QUANTAXIS.QAUtil.QADate_trade import (QA_util_date_gap,
                                            QA_util_future_to_realdatetime,
                                            QA_util_future_to_tradedatetime,
                                            trade_date_sse)
-# datetolls
-from QUANTAXIS.QAUtil.QADateTools import (QA_util_add_months,
-                                          QA_util_get_1st_of_next_month,
-                                          QA_util_getBetweenMonth,
-                                          QA_util_getBetweenQuarter)
-# dict function
+from QUANTAXIS.QAUtil.QADict import QA_util_dict_remove_key
 from QUANTAXIS.QAUtil.QADict import QA_util_dict_remove_key
 from QUANTAXIS.QAUtil.QAFile import QA_util_file_md5
-# list function
+from QUANTAXIS.QAUtil.QAFile import QA_util_file_md5
 from QUANTAXIS.QAUtil.QAList import (QA_util_diff_list,
                                      QA_util_multi_demension_list)
-
-# code function
-from QUANTAXIS.QAUtil.QACode import QA_util_code_tostr, QA_util_code_tolist
-# dict function
-from QUANTAXIS.QAUtil.QADict import QA_util_dict_remove_key
-# log
 from QUANTAXIS.QAUtil.QALogs import (QA_util_log_debug, QA_util_log_expection,
                                      QA_util_log_info)
-# MongoDB
+from QUANTAXIS.QAUtil.QAMail import QA_util_send_mail
 from QUANTAXIS.QAUtil.QAMongo import (QA_util_mongo_infos,
                                       QA_util_mongo_initial,
                                       QA_util_mongo_status)
-# Parameter
 from QUANTAXIS.QAUtil.QAParameter import (
     ACCOUNT_EVENT, AMOUNT_MODEL, BROKER_EVENT, BROKER_TYPE, DATASOURCE,
     ENGINE_EVENT, EVENT_TYPE, EXCHANGE_ID, FREQUENCE, MARKET_ERROR,
     MARKET_EVENT, MARKET_TYPE, ORDER_DIRECTION, ORDER_EVENT, ORDER_MODEL,
     ORDER_STATUS, OUTPUT_FORMAT, RUNNING_ENVIRONMENT, TRADE_STATUS, RUNNING_STATUS)
-# RANDOM class
 from QUANTAXIS.QAUtil.QARandom import QA_util_random_with_topic
 from QUANTAXIS.QAUtil.QASetting import (DATABASE, QASETTING, QA_Setting,
                                         exclude_from_stock_ip_list,
                                         future_ip_list, info_ip_list,
                                         stock_ip_list)
 from QUANTAXIS.QAUtil.QASingleton import singleton
-# sql
+from QUANTAXIS.QAUtil.QASingleton import singleton
 from QUANTAXIS.QAUtil.QASql import (QA_util_sql_async_mongo_setting,
                                     QA_util_sql_mongo_setting,
                                     QA_util_sql_mongo_sort_ASCENDING,
                                     QA_util_sql_mongo_sort_DESCENDING)
-# format
 from QUANTAXIS.QAUtil.QATransform import (QA_util_to_json_from_pandas,
                                           QA_util_to_list_from_numpy,
                                           QA_util_to_list_from_pandas,
                                           QA_util_to_pandas_from_json,
                                           QA_util_to_pandas_from_list)
-
-# 网络相关
 from QUANTAXIS.QAUtil.QAWebutil import QA_util_web_ping
-from QUANTAXIS.QAUtil.QAMail import QA_util_send_mail
 
-# 文件相关
 
-from QUANTAXIS.QAUtil.QAFile import QA_util_file_md5
-
+# config
+# code function
+# csv
+# date
+# trade date
 # datetolls
-from QUANTAXIS.QAUtil.QADateTools import (
-    QA_util_getBetweenQuarter, QA_util_get_1st_of_next_month,
-    QA_util_add_months, QA_util_getBetweenMonth
-)
-
-from QUANTAXIS.QAUtil.Parallelism import Parallelism, Parallelism_Thread
-from QUANTAXIS.QAUtil.QACache import QA_util_cache
-from QUANTAXIS.QAUtil.QASingleton import singleton
-from resource import getrusage as resource_usage, RUSAGE_SELF
-from time import time as timestamp
-from functools import wraps
-
-
+# dict function
+# list function
+# code function
+# dict function
+# log
+# MongoDB
+# Parameter
+# RANDOM class
+# sql
+# format
+# 网络相关
+# 文件相关
+# datetolls
 def print_used_time(func):
     ''' 打印运行时间
 
@@ -160,8 +154,8 @@ def print_used_time(func):
         start_time, start_resources = timestamp(), resource_usage(RUSAGE_SELF)
         func(*args, **kwargs)
         end_resources, end_time = resource_usage(RUSAGE_SELF), timestamp()
-        print({'消耗时间':{'real': end_time - start_time,
-                'sys': end_resources.ru_stime - start_resources.ru_stime,
-                'user': end_resources.ru_utime - start_resources.ru_utime}})
+        print({'消耗时间': {'real': end_time - start_time,
+                        'sys': end_resources.ru_stime - start_resources.ru_stime,
+                        'user': end_resources.ru_utime - start_resources.ru_utime}})
         return True
     return wrapper

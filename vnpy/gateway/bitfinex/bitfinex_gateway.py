@@ -1,4 +1,3 @@
-# encoding: UTF-8
 """
 Author: vigarbuaa
 """
@@ -71,6 +70,8 @@ class BitfinexGateway(BaseGateway):
         "proxy_host": "127.0.0.1",
         "proxy_port": 1080,
     }
+
+    exchanges = [Exchange.BITFINEX]
 
     def __init__(self, event_engine):
         """Constructor"""

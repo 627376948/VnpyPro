@@ -1,4 +1,3 @@
-# encoding: UTF-8
 """
 Please install futu-api before use.
 """
@@ -85,6 +84,8 @@ class FutuGateway(BaseGateway):
         "市场": ["HK", "US"],
         "环境": [TrdEnv.REAL, TrdEnv.SIMULATE],
     }
+
+    exchanges = list(EXCHANGE_FUTU2VT.values())
 
     def __init__(self, event_engine):
         """Constructor"""

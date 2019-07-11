@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 import json
 import ssl
 import sys
@@ -88,8 +86,6 @@ class WebsocketClient(object):
     def stop(self):
         """
         Stop the client.
-
-        This function cannot be called from worker thread or callback function.
         """
         self._active = False
         self._disconnect()
@@ -97,6 +93,8 @@ class WebsocketClient(object):
     def join(self):
         """
         Wait till all threads finish.
+
+        This function cannot be called from worker thread or callback function.
         """
         self._ping_thread.join()
         self._worker_thread.join()
