@@ -1,0 +1,2180 @@
+ <!DOCTYPE HTML>
+<html>
+<head>
+    <title>新开源(300109) 公司资料_F10_同花顺金融服务网</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7;IE=9"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+	<meta name="keywords" content="新开源最新动态,新开源公司概况,新开源财务分析,新开源股东研究,新开源股本结构,新开源公司大事,新开源分红融资"/>
+	<meta name="description" content="暂无"/>
+	  
+	<script type="text/javascript" src="//s.thsi.cn/js/chameleon/chameleon.min.1529649.js"></script><script src="http://s.thsi.cn/js/m/common/bridge.js" type="text/javascript"></script>
+		<style>
+        .wencaibs{color:#008BFF!important;cursor:pointer;}
+        .wd-tb .ptxt { word-break: break-word;}
+
+        .comment-chart-head{color: #89a;}
+        .comment-chart-head span{float: right;}
+        .comment-chart-head span i{vertical-align: middle; display: inline-block; width: 20px; height: 20px;margin: 0 2px 0 6px; border-radius: 20px; overflow: hidden;}
+        .comment-chart-head .imp-news{background: #da2e1f;}
+        .comment-chart-head .yidong-news{background: #e3bf1a;}
+
+	
+        #ckg_table1 tr td{text-align:center}
+        #ckg_table2 tr td{text-align:center}
+        #ckg_table3 tr td{text-align:center}
+        #ckg_table4 tr td{text-align:center}
+        #ckg_table5 tr td{text-align:center}
+
+		li{list-style-type:none;
+			list-style-position:outside;}
+	</style>
+	<!--统计页面加载时间-->
+	<script type="text/javascript">
+		var loadTimer= new Date().getTime();
+	</script>
+</head>
+<script type="text/javascript">
+ 
+//cookie设置
+function setReviewJumpState(state) {
+	document.cookie = 'reviewJump=' 
+					+ state 
+					+ ';path=/;domain='
+					+ window.location.host;
+}
+//取得对应名字cookie
+function getCookie(name) {
+	var cookieValue = "";
+	var search = name + "=";
+	if (document.cookie.length > 0) { 
+	    offset = document.cookie.indexOf(search);
+	    if (offset != -1)    { 
+	        offset += search.length;
+	        end = document.cookie.indexOf(";", offset);
+	        if (end == -1) end = document.cookie.length;
+	        cookieValue = unescape(document.cookie.substring(offset, end))
+	    }
+	}
+	return cookieValue;
+}
+//栏目提前跳转
+var reviewJumpState = getCookie('reviewJump');
+if (!!reviewJumpState && reviewJumpState != 'nojump') {
+	setReviewJumpState('nojump');
+	window.location.href = unescape(reviewJumpState);
+} else {
+	setReviewJumpState('nojump');
+}
+//动态添加link-同步-会阻塞
+function addCssByLink(url){
+    document.write('<link rel="stylesheet" type="text/css"');
+    document.write(' href="' + url + '">');
+}
+function isMac() {
+        return /macintosh|mac os x/i.test(navigator.userAgent);
+};
+ var hash = window.location.hash.substring(1);
+hashArray = hash.split('=');
+if (hashArray[0] == 'stockpage') {
+    var STOCK_SKIN = 'white';
+} else {
+    var STOCK_SKIN = getCookie('skin_color');
+}
+//肤色与客户端同步
+function syncClientSkin(){
+	try {//取得客户端肤色
+		if (isMac()) {
+			return 'white';
+		} 
+		return 'black';
+	} catch(e) {}
+}
+if (!STOCK_SKIN) {
+	STOCK_SKIN = syncClientSkin();
+}
+if (STOCK_SKIN == 'white') {
+    addCssByLink('http://s.thsi.cn/cb?css/basic/stock/white/;style_v3.1.white.css;chart_v2.min.20180110.css;dupont.css;black_v2-1.css;custom.min.css;operations.min.css;writecsskzd.min.20170608.css');
+	addCssByLink('http://s.thsi.cn/cb?css/basic/stock/;survey-w.css;wxgcl_mod.css;provider-w_v2.css;searchbar-w_v2.css;wccept.css;wtgfx.css');
+	addCssByLink('http://s.thsi.cn/css/basic/stock/fschool/f_school_w.20151214.css');
+	addCssByLink('http://s.thsi.cn/css/basic/stock/white/wsplpager.20170504.css');
+	addCssByLink('http://s.thsi.cn/css/basic/stock/wchartsdom.css');
+	addCssByLink('http://s.thsi.cn/cb?css/basic/stock/white/;industrydata.css;main_v1-2.css;xgcl.css;courier.css;recommend.css;housedata.min.css;longhu.css;operate_white.20170525.css');
+	addCssByLink('http://s.thsi.cn/css/basic/stock/white/remind_white.20170713.css');
+	addCssByLink('http://s.thsi.cn/css/basic/stock/index.css');
+	addCssByLink('http://s.thsi.cn/cb?js/home/v5/thirdpart/;scrollbar/jquery.mCustomScrollbar.css');
+	addCssByLink('http://s.thsi.cn/css/basic/stock/instition_white_v2.20170720.css');
+	if (!!window.ActiveXObject&&!window.XMLHttpRequest) {
+		addCssByLink('http://s.thsi.cn/css/basic/stock/white/expression.min.css');
+	}
+			addCssByLink('http://s.thsi.cn/cb?css/basic/stock/jquery.mCustomScrollbar.min.css');
+	addCssByLink('http://s.thsi.cn/cb?css/basic/stock/white/patentData_v2.20180130.css');
+	addCssByLink('http://s.thsi.cn/css/basic/stock/white/product_cmper_v2.20170706.css');
+    	} else {
+ 	addCssByLink('http://s.thsi.cn/cb?css/basic/stock/black/;style_v3.20170525.css;chart_v2.min.20180110.css;black_v2-1.css;custom.min.css;operations.min.css;csskzd.min.20150608.css;/css/basic/stock/;survey.20150929.css;provider_v2.css;searchbar_v2.css;ccept.css');
+	addCssByLink('http://s.thsi.cn/css/basic/stock/fschool/f_school.20151214.css');
+	addCssByLink('http://s.thsi.cn/css/basic/stock/black/splpager.20170504.css');
+	addCssByLink('http://s.thsi.cn/cb?css/basic/stock/;chartsdom.css;xgcl_mod.css;/css/basic/stock/;tgfx.css');
+	addCssByLink('http://s.thsi.cn/cb?css/basic/stock/black/;industrydata.css;main_v1-2.css;xgcl.css;courier.css;funcRecommend.css;dupont.css;longhu.css;operate.20170525.css');
+	addCssByLink('http://s.thsi.cn/css/basic/stock/black/remind_black.20170713.css');
+	addCssByLink('http://s.thsi.cn/cb?js/home/v5/thirdpart/;scrollbar/jquery.mCustomScrollbar.css');
+	
+	addCssByLink('http://s.thsi.cn/css/basic/stock/index.css');
+	addCssByLink('http://s.thsi.cn/css/basic/stock/instition_black_v2.20170720.css');
+	if (!!window.ActiveXObject&&!window.XMLHttpRequest) {
+		addCssByLink('http://s.thsi.cn/css/basic/stock/black/expression.min.20140801.css');
+	}
+		addCssByLink('http://s.thsi.cn/cb?css/basic/stock/jquery.mCustomScrollbar.min.css');
+	addCssByLink('http://s.thsi.cn/cb?css/basic/stock/patentData_v2.20180130.css');
+	addCssByLink('http://s.thsi.cn/css/basic/stock/black/product_cmper_v2.20170706.css');
+			} 
+/*calendar*/
+function  minDate(){
+ 	var data = $('#inte_json').text();
+	var datajson =new Object();
+	if (data) {
+		data = eval('('+data+')');
+	}
+	for (var x in data) {
+		datajson = data[x];
+	}
+	var minDate = datajson.year+'-'+datajson.month+'-'+datajson.day;
+	return minDate;
+ }
+ Date.prototype.Format = function(fmt)   
+{ //author: meizz   
+  var o = {   
+    "M+" : this.getMonth()+1,                 //月份   
+    "d+" : this.getDate(),                    //日   
+    "h+" : this.getHours(),                   //小时   
+    "m+" : this.getMinutes(),                 //分   
+    "s+" : this.getSeconds(),                 //秒   
+    "q+" : Math.floor((this.getMonth()+3)/3), //季度   
+    "S"  : this.getMilliseconds()             //毫秒   
+  };   
+  if(/(y+)/.test(fmt))   
+    fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));   
+  for(var k in o)   
+    if(new RegExp("("+ k +")").test(fmt))   
+  fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));   
+  return fmt;   
+}  
+ function  displayDate(){
+ 	var data = $('#inte_json').text();
+ 	var date =new Array();
+	var datajson =new Object();
+	var i=0;
+	if (data) {
+		data = eval('('+data+')');
+	}
+	for (var x in data) {
+		datajson[x] = data[x];
+		dates = datajson[x].year+'-'+datajson[x].month+'-'+datajson[x].day;
+		if (x==0|| date[i-1] != dates) {
+			date[i] = dates;
+			i++;
+		}
+	}
+	var count =date.length;
+	var date2 = new Date();
+	var month =date2.getMonth()+1;
+	var day =date2.getDate();
+	if ((date2.getMonth()+1)>9) {
+	} else {
+	 	var month ="0"+month;
+	}
+	if (date2.getDate()>9) {
+	} else {
+	 	var day ="0"+day;
+	}
+	year = date2.getFullYear();
+	date2 = year+'-'+month+'-'+day;
+	var result = "['";
+	for (i=0;i<count;i++) {
+		if (date2 == date[i]) {
+			dateArr = date2.split('-');
+			newdate = new Date(new Date(dateArr[0], dateArr[1]-1,  dateArr[2])-24*60*60*1000);
+			date2 = newdate.Format("yyyy-MM-dd");		
+		} else {
+			result +=date2+"',";
+			dateArr = date2.split('-');
+			newdate = new Date(new Date(dateArr[0], dateArr[1]-1,  dateArr[2])-24*60*60*1000);
+			date2 = newdate.Format("yyyy-MM-dd");
+			i--;
+		}
+	}
+	result = result.substr(0,result.length-1)+']';
+	return result;
+ }
+    function showDatePicker1(color) {
+        WdatePicker({
+            selfCssUrl:'http://s.thsi.cn/css/basic/stock/'+STOCK_SKIN+'/mydatepicker.css',
+            eCont:'WdateDiv1',
+            vel:'elDate1',
+            minDate:minDate(),
+            maxDate:'%y-%M-%d',
+            onpicked:function(dp){
+                $('#elDate1').text(dp.cal.getNewDateStr());
+                var invalider = $(".J_calendar").find("iframe").contents().find(".WinvalidDay");
+            },
+            Mchanged:function(dp){
+                var invalider = $(".J_calendar").find("iframe").contents().find(".WinvalidDay");
+            }
+        });
+
+    }
+
+    function showDatePicker2(color) {
+    	
+        WdatePicker({
+            selfCssUrl:'http://s.thsi.cn/css/basic/stock/'+STOCK_SKIN+'/mydatepicker.css',
+            eCont:'WdateDiv2',
+            vel:'elDate2',
+            maxDate:'%y-%M-%d',
+            onpicked:function(dp){
+                $('#elDate2').text(dp.cal.getNewDateStr());
+                var invalider = $(".J_calendar").find("iframe").contents().find(".WinvalidDay");
+            },
+            Mchanged:function(dp){
+                var invalider = $(".J_calendar").find("iframe").contents().find(".WinvalidDay");
+            }
+        });
+
+    }
+</script>
+<body>
+<div class="votepopbox votesuccess" style="display: none">
+		<div class="vpopicon"></div>
+		<p class="vpoptxt fz18">谢谢您的宝贵意见</p>
+		<p class="vpoptxt">您的支持是我们最大的动力</p>
+	</div>
+	<div class="votepopbox voteinfo" style="display: none">
+		<div class="vpopicon"></div>
+		<p class="vpoptxt fz18">谢谢您的支持</p>
+		<p class="vpoptxt"></p>
+	</div>
+    <div class="wrapper">
+<!-- F10 Header Start -->
+		<div class="header">
+		    <div class="hd">
+		        <div class="logo fl"><a title="同花顺F10">同花顺F10</a></div>
+								
+						        <div onclick="sendTalog('f10_click_quot')" style="width:250px; margin-left:80px; font-size:14px;cursor:pointer;display:none" class="fl tip " id="quotedata">
+		        	<div style="width:120px;" class="fl">最新价： <span style="width:40px" class="upcolor" id="zxj"></span></div>
+		        	<div style="width:120px;" class="fr">涨跌幅： <span style="width:40px;" class="upcolor" id="zdf"></span></div>
+		        </div>	
+		        				
+		        <span class="fr skin-change"><a href="###">换肤</a></span>
+		        <div class="search fr">
+		            <div id="updownchange" type="once" class="codeChange fl" style="display: none;">
+		                <a href="javascript:void(0)" class="per">上一个股</a>
+		                <a href="javascript:void(0)" class="next">下一个股</a>
+		            </div>		
+		            <div class="fl searchbar">
+			            <div class="text fl">
+			                <input type="text" id="jpjl-input" value="输入股票名称或代码" /><!--文本框获得焦点给.searchbar添加hover类-->
+			             </div>
+		                <input type="button" value="搜索" class="btn" id="submit"/>
+		            </div>
+		        </div>
+		    </div>
+		    <div class="bd clear">
+		        <div class="code fl">
+		        	<a href="interactive.html" tid="wdm" posid="r1c1" class="iwen" onclick="TA.log({'id':'F10_review','nj':1})">i问董秘</a>
+			        <h1>
+			        	<a href="./" tid="this" posid="r1c2" title="新开源 300109">
+			            新开源<br />300109			        	</a>
+			        </h1>
+		        </div>
+		        <div class="nav">
+		            <ul>
+		                <li><a href="./"              target="_self" tid="zxdt" posid="r1c3" >最新动态</a></li>
+		                <li><a href="./company.html"  target="_self" tid="gszl" posid="r1c4"  class="cur"> 公司资料</a></li>
+		                <li><a href="./holder.html"   target="_self" tid="gdyj" posid="r1c5" >股东研究</a></li>
+		                <li><a href="./operate.html"  target="_self" tid="jyfx" posid="r1c6" > 经营分析</a></li>
+		                <li><a href="./equity.html"   target="_self" tid="gbjg" posid="r1c7" >股本结构</a></li>
+		                <li><a href="./capital.html"  target="_self" tid="zbyz" posid="r1c8" > 资本运作</a></li>
+		                <li><a href="./worth.html"    target="_self" tid="ylyc" posid="r1c9"  >盈利预测</a></li>
+		                <li><a href="./news.html"     target="_self" tid="xwgg" posid="r2c3" >新闻公告</a></li>
+		                <li><a href="./concept.html"  target="_self" tid="gntc" posid="r2c4" >概念题材</a></li>
+		                <li><a href="./position.html" target="_self" tid="zlcc" posid="r2c5" >主力持仓</a></li>
+		                <li><a href="./finance.html"  target="_self" tid="cwgk" posid="r2c6" > 财务概况</a></li>
+						<li><a href="./bonus.html"    target="_self" tid="fhrz" posid="r2c7" >分红融资</a></li>
+						<li><a href="./event.html"    target="_self" tid="gsds" posid="r2c8" >公司大事</a></li>
+		                <li><a href="./field.html"    target="_self" tid="hydb" posid="r2c9" >行业对比</a></li>
+		            </ul>
+		        </div>
+		        <div class="subnav">
+					<ul>
+					   						<li>
+							<a style="position:relative;height:25px;" class="skipto" type="" nav="detail"  name="company.html#detail" href="###">详细情况							</a>
+						</li>
+												<li>
+							<a style="position:relative;height:25px;" class="skipto" type="" nav="manager"  name="company.html#manager" href="###">高管介绍							</a>
+						</li>
+												<li>
+							<a style="position:relative;height:25px;" class="skipto" type="" nav="publish"  name="company.html#publish" href="###">发行相关							</a>
+						</li>
+												<li>
+							<a style="position:relative;height:25px;" class="skipto" type="" nav="share"  name="company.html#share" href="###">参控股公司							</a>
+						</li>
+												<li>
+							<a style="position:relative;height:25px;" class="skipto" type="" nav="patent"  name="company.html#patent" href="###">专利状况							</a>
+						</li>
+								            </ul>
+		        </div>
+		    </div>
+		</div>
+<!-- F10 Header End -->
+
+<!-- F10 Content Start -->
+		<style>
+		.iwc_searchbar{display: none;}
+	</style>
+		<div class="iwc_searchbar clearfix" style="">
+    <div class="tips-box" style="display: none;">
+        <div class="t-hd"></div>
+        <div class="t-bd">
+            <div class="info">
+                <p>F10 功能找不到？在搜索框里直接输入您想要的功能！比如输入“龙虎榜”，赶快试一下哦！</p>
+                <div class="btn">
+                    <a href="###" class="a-left close">跳过</a>
+                    <a href="###" class="a-right next">下一步</a>
+                </div>
+            </div>
+            <div class="info" style="display: none;">
+                <p>选股选不好？可以直接输入你想要的问句啦，比如输入“近一周涨幅超过30%的股票”赶紧行动吧！</p>
+                <div class="btn">
+                    <a href="###" class="a-left prev">上一步</a>
+                    <a href="###" class="a-right close">完成</a>
+                </div>
+            </div>
+        </div>
+        <div class="t-ft"></div>
+   	 </div>
+     <div class="searchfx">
+        <input id="search_input" x-webkit-speech="" x-webkit-grammar="builtin:search" lang="zh_CN" class="fillbox" autocomplete="off" type="text" value="输入问句，你想知道的都在这里">
+        <input class="action_btn" id="search_submit" type="button" value="搜索">
+        <span  class="tips-icon"></span>
+     </div>
+	</div>
+	<div class="content page_event_content" >	
+<div class="m_box company_overview company_detail" id="detail" stat="compnay_detail">
+	<div class="hd flow_index search_z">
+        <h2>详细情况</h2>
+    </div>
+		<div class="bd">
+				<table class="m_table">
+			<tbody>
+				<tr class="video-btn-box-tr">
+											<td rowspan="3" align="center" >
+							<img src="http://eq.10jqka.com.cn/logo/300109.png" alt="博爱新开源医疗科技集团股份有限公司" height="60" width="160">
+							<!--<p class="email-address">企业在此投放宣传视频：news@myhexin.com</p>-->
+						</td>
+										
+					<td><strong class="hltip fl">公司名称：</strong><span>博爱新开源医疗科技集团股份有限公司</span>
+					</td>
+					<td><strong class="hltip fl">所属地域：</strong><span>河南省</span>
+					</td>
+				</tr>
+				<tr>
+					<td><strong class="hltip fl">英文名称：</strong><span>Nky Medical Holding Ltd.</span>
+					</td>
+					<td><strong class="hltip fl">所属行业：</strong><span>化工 — 化学制品</span>
+					</td>
+				</tr>
+				<tr>
+					<td><strong class="hltip fl">曾 用 名：</strong><span>-</span></td>
+					<td><strong class="hltip fl">公司网址：</strong><span>
+    					    					    					<a href="http://www.boai-nky.com" target="_blank">www.boai-nky.com</a>
+    					    					</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="m_tab_content2">
+			<table class="m_table ggintro">
+				<tbody>
+					<tr>
+						<td colspan="3">
+							<strong class="hltip fl">主营业务：</strong>
+							<span>从事PVP系列产品的研发、生产和销售</span>
+						</td>
+					</tr>
+					<tr class="product_name">									
+						<td colspan="3"><strong class="hltip fl">产品名称：</strong>
+							<span>
+																						<a href="http://search.10jqka.com.cn/search?ts=2&f=1&qs=f10_gszl_cpmc&tid=info&w=PVP K30#refCountId=f10_gszl_cpmc" target="_blank" title="查看释义">PVP K30</a>
+																<a class="m_more" topstock="300109"  cid="PVP K30" tag="PVP K30" onclick="TA.log({'id':'f10_jzds','nj':1})" href="javascript:void(0)"  targ="proCompete_box0" title="产品竞争"></a>
+							    															、<a href="http://search.10jqka.com.cn/search?ts=2&f=1&qs=f10_gszl_cpmc&tid=info&w=PVP-I#refCountId=f10_gszl_cpmc" target="_blank" title="查看释义">PVP-I</a>
+																<a class="m_more" topstock="300109"  cid="PVP-I" tag="PVP-I" onclick="TA.log({'id':'f10_jzds','nj':1})" href="javascript:void(0)"  targ="proCompete_box1" title="产品竞争"></a>
+							    															、<a href="http://search.10jqka.com.cn/search?ts=2&f=1&qs=f10_gszl_cpmc&tid=info&w=PVP系列其他产品#refCountId=f10_gszl_cpmc" target="_blank" title="查看释义">PVP系列其他产品</a>
+																<a class="m_more" topstock="300109"  cid="PVP系列其他产品" tag="PVP系列其他产品" onclick="TA.log({'id':'f10_jzds','nj':1})" href="javascript:void(0)"  targ="proCompete_box2" title="产品竞争"></a>
+							    															、<a href="http://search.10jqka.com.cn/search?ts=2&f=1&qs=f10_gszl_cpmc&tid=info&w=肿瘤早期诊断#refCountId=f10_gszl_cpmc" target="_blank" title="查看释义">肿瘤早期诊断</a>
+																<a class="m_more" topstock="300109"  cid="肿瘤早期诊断" tag="肿瘤早期诊断" onclick="TA.log({'id':'f10_jzds','nj':1})" href="javascript:void(0)"  targ="proCompete_box3" title="产品竞争"></a>
+							    															、<a href="http://search.10jqka.com.cn/search?ts=2&f=1&qs=f10_gszl_cpmc&tid=info&w=分子诊断服务#refCountId=f10_gszl_cpmc" target="_blank" title="查看释义">分子诊断服务</a>
+																<a class="m_more" topstock="300109"  cid="分子诊断服务" tag="分子诊断服务" onclick="TA.log({'id':'f10_jzds','nj':1})" href="javascript:void(0)"  targ="proCompete_box4" title="产品竞争"></a>
+							    															、<a href="http://search.10jqka.com.cn/search?ts=2&f=1&qs=f10_gszl_cpmc&tid=info&w=基因测序技术服务#refCountId=f10_gszl_cpmc" target="_blank" title="查看释义">基因测序技术服务</a>
+																<a class="m_more" topstock="300109"  cid="基因测序技术服务" tag="基因测序技术服务" onclick="TA.log({'id':'f10_jzds','nj':1})" href="javascript:void(0)"  targ="proCompete_box5" title="产品竞争"></a>
+							    																					</span>
+						</td>
+					</tr>
+										<tr class="product_show">									
+						<td colspan="3" class ="product"><strong class="hltip fl">可能存在产品：</strong>
+							<span class="product_title">
+							精准医疗平台、健康医疗服务							</span>
+							<span class="performance_trailer"> 
+							    <a class="check_detail" href="javascript:void(0);" onclick="clickTalogStat('f10_gszl_xxqk_product_zk','F10new_tbts');">
+                    				<span class="open_btn">展开&nbsp▼</span><span class="close_btn hidden">收起&nbsp▲</span>
+                    	        </a>
+                    		</span>
+                    		<span tag="zycpcontent" taname="f10_stock_iwc_knczcp" onclick="clickTalogStat('f10_gszl_xxqk_product_wh','F10new_tbts');" class="gd_ques iwcclick" name="可能存在产品" content="是同花顺根据人工智能计算挖掘得出的结果，数据仅供参考。"></span>
+                    		<div class="check_else performance_trailer" style="display:none;width:100%;"> 
+                    		         <table class="m_table m_hl" style="width:100%;">
+                        				<thead>
+					<tr>
+                        						<th class="tc" width="22%">主营产品名称</th>
+                        						<th class="tc">出自摘要</th>
+                        					</tr>
+                        				</thead>
+                        				<tbody>
+																				<tr>
+										<td class="tc"><span>精准医疗平台</span></td>
+                    			        <td class="tl"><span class="short_content">同时本次对外投资也直接推动公司<font color="red">精准医疗平台</font>的发展,进一步提升三济生物品牌知名度以及增强公司整体盈利能力,并对公司未来收入及利润的增长带来积极影响,符合公司长远发展战略。</span><span class="more_tag1"><a class="client" onclick="clickTalogStat('f10_gszl_xxqk_product_xq','F10new_tbts');" href="http://www.iwencai.com/snapshot/report_pdf/267a0dbef2aba698.html&qs=pc_~client~info-resultpage~all-futureproduct" target="_blank">详情>></a></span></td>
+                    			        </tr>
+                    			        										<tr>
+										<td class="tc"><span>健康医疗服务</span></td>
+                    			        <td class="tl"><span class="short_content">布局精准医疗领域:2015年8月底完成对三家子公司武汉呵尔、长沙三济、上海晶能的收购,呵尔医疗主要从事肿瘤早期诊服务,三济生物致力于分子诊断与个体化治疗服务,晶能生物从事基因诊断服务,这标志着公司从此迈入“消费类特种化学品”和“<font color="red">健康医疗服务</font>”双平台模式,进一步拓展公司的发展和成长空间。</span><span class="more_tag1"><a class="client" onclick="clickTalogStat('f10_gszl_xxqk_product_xq','F10new_tbts');" href="http://www.iwencai.com/snapshot/report_pdf/ddbfeee056fa4607.html&qs=pc_~client~info-resultpage~all-futureproduct" target="_blank">详情>></a></span></td>
+                    			        </tr>
+                    			        										
+									</tbody>
+								  </table>
+                    			</div> 
+						</td>
+					</tr>
+										<tr>
+						<td colspan="3">
+						<div class="tipbox_wrap mr10" style="z-index:100">
+							<strong class="hltip fl iwcclick"  taname='f10_stock_iwc_kggdck' data-url='http://www.iwencai.com/yike/detail/auid/0948cd92a5d19de8?qs=client_f10_baike_4' content='控股股东是指其出资额占有限责任公司资本总额50％以上，或者是其持有的股份占股份有限公司股本总额50％以上的股东；且出资额或者持有股份的比例虽然不足50％，但依其出资额或者持有的股份所享有的表决权已足以对股东会、股东大会的决议产生重大影响的股东。'>控股股东：</strong>
+												        					        <span>王东虎、王坚强、杨海江					        <span class="gray">(持有博爱新开源医疗科技集团股份有限公司股份比例：19.68、8.89、6.62%）</span>							</span>
+													</div>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3">
+						<div class="tipbox_wrap mr10" style="z-index:99">
+							<strong class="hltip fl iwcclick"  taname='f10_stock_iwc_kggdck' data-url='http://www.iwencai.com/yike/detail/auid/abb88516c5fb2dbd?qs=client_f10_baike_4' content='指虽不是公司的股东，但通过投资关系、协议或者其他安排，能够实际支配公司行为的人'>实际控制人：</strong>
+	
+														
+														<span>王东虎、王坚强、杨海江							<span class="gray">(持有博爱新开源医疗科技集团股份有限公司股份比例：19.68、8.89、6.62%）</span>							</span>
+													</div>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3">
+							<div class="tipbox_wrap mr10" style="z-index:98">
+								<strong class="hltip fl">最终控制人：</strong>
+																								<span>王东虎、王坚强、杨海江								<span class="gray">(持有博爱新开源医疗科技集团股份有限公司股份比例：19.68、8.89、6.62%）</span>								</span>
+															</div>
+						</td>
+					</tr>							
+					<tr>
+						<td>
+							<strong class="hltip fl">董事长：</strong>
+							<span>
+								<a href="http://search.10jqka.com.cn/psearch?tid=people&qs=f10_gszl_rw&ts=2&ts=3&w=%E6%96%B9%E5%8D%8E%E7%94%9F" target="_blank" style="color:#0099fa">方华生</a>							</span>
+						</td>
+						<td>
+							<strong class="hltip fl">董　　秘：</strong>
+							<span><a href="http://search.10jqka.com.cn/psearch?tid=people&qs=f10_gszl_rw&ts=2&ts=3&w=%E7%8E%8B%E5%AE%9E%E5%88%9A" target="_blank">王实刚</a>							</span>
+						</td>
+						<td>
+							<strong class="hltip fl">法人代表：</strong>
+							<span>
+							<a href="http://search.10jqka.com.cn/psearch?tid=people&qs=f10_gszl_rw&ts=2&ts=3&w=%E6%96%B9%E5%8D%8E%E7%94%9F" target="_blank">方华生</a>							</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<strong class="hltip fl">总 经 理：</strong>
+							<span><a href="http://search.10jqka.com.cn/psearch?tid=people&qs=f10_gszl_rw&ts=2&ts=3&w=%E7%8E%8B%E4%B8%9C%E8%99%8E" target="_blank">王东虎</a></span>
+						</td>
+						<td>
+							<strong class="hltip fl">注册资金：</strong>
+							<span>1.7亿元</span>
+						</td>
+						<td>
+							<strong class="hltip fl">员工人数：</strong>
+							<span>738</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<strong class="hltip fl">电　　话：</strong>
+							<span>86-10-52049177;86-391-8610680</span>
+						</td>
+						<td>
+							<strong class="hltip fl">传　　真：</strong>
+							<span>86-10-52049176;86-391-8610681</span>
+						</td>
+						<td>
+							<strong class="hltip fl">邮      编：</strong>
+							<span>454450</span>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3">
+							<strong class="hltip fl">办公地址：</strong>
+							<span>河南省焦作市博爱县文化路(东段)1888号</span>
+						</td>
+					</tr>
+					<tr class="intro">
+						<td colspan="3">
+							<strong class="hltip">公司简介：</strong>
+														<p class="tip lh24">博爱新开源医疗科技集团股份有限公司是一家从事PVP系列产品的研发、生产和销售的公司.公司PVP产品包括PVPK系列、PVP-I、PVPP和PVP/VA共聚物四大系列,四十多个品种,涵盖工业级、化妆品级、食品级和医药级四种规格.PVP系列产品作为一种辅料、添加剂或者助剂,广泛应用于日用化工、医药工业、酿酒和饮料工业、颜料涂料、纺织工业、造纸工业、采油、感光材料和电子工业等领域.公司是中国最大的PVP制造商之一.公司通过工艺技术改造,提高产品质量,先后取得了ISO9001:2000认证、HACCP认证和Kosher认证,完成了美国FDA食品设施注册和欧洲化学品REACH预注册等市场准入.公司多项工...<a href="javascript:void(0)" class="more fr">查看全部▼</a></p>
+							<p class="none tip lh24">博爱新开源医疗科技集团股份有限公司是一家从事PVP系列产品的研发、生产和销售的公司.公司PVP产品包括PVPK系列、PVP-I、PVPP和PVP/VA共聚物四大系列,四十多个品种,涵盖工业级、化妆品级、食品级和医药级四种规格.PVP系列产品作为一种辅料、添加剂或者助剂,广泛应用于日用化工、医药工业、酿酒和饮料工业、颜料涂料、纺织工业、造纸工业、采油、感光材料和电子工业等领域.公司是中国最大的PVP制造商之一.公司通过工艺技术改造,提高产品质量,先后取得了ISO9001:2000认证、HACCP认证和Kosher认证,完成了美国FDA食品设施注册和欧洲化学品REACH预注册等市场准入.公司多项工艺技术改造填补了国内空白,处于国内领先水平.公司已取得6项实用新型专利,另有5项发明专利申请和1项实用新型专利申请已为国家知识产权局受理.2009年9月,公司被认定为"高新技术企业",证书编号:GR200941000051,有效期3年。<a href="javascript:void(0)" class="less fr">收起▲</a></p>
+													</td>
+					</tr>						
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="ft"></div>
+</div>
+
+<!-- 高管介绍 -->
+<div class="m_box z101" id="manager" stat="company_manager">
+	<div class="hd">
+		<h2>高管介绍</h2>
+	</div>
+	<div class="bd">
+		<div class="m_tab">
+			<ul>
+				<li class="cur" name="ml_001"><a class="mlabel"
+					href="javascript:void(0)" targ="ml_001">董事会(7人)</a>
+				</li>
+				<li name="ml_002"><a class="mlabel"
+					href="javascript:void(0)" targ="ml_002">监事会(3人)</a>
+				</li>
+				<li name="ml_003"><a class="mlabel"
+					href="javascript:void(0)" targ="ml_003">高管(10人)</a>
+				</li>
+			</ul>
+		</div>
+				    				
+		<div class="m_tab_content" id="ml_001"  >
+			<table class="m_table managelist m_hl">
+				<thead>
+					<tr>
+						<th width="5%">序号</th>
+						<th width="13%">姓名</th>
+						<th width="17%">职务</th>
+						<th width="15%">持股数</th>
+						<th width="5%">序号</th>
+						<th width="13%">姓名</th>
+						<th width="17%">职务</th>
+						<th width="15%">持股数</th>
+					</tr>
+				</thead>
+				<tbody>
+																		<tr>
+																<th class="tc">1</th>
+						<td class="tc name">
+							<a onclick="TA.log({'id':'f10_gszl_ggjs','nj':1})" class="turnto" href="javascript:void(0)">方华生</a>
+							<div class="person_table hidden">
+								<a class="close" href="javascript:void(0);">×</a>
+								<table class="m_table ggintro">
+									<thead>
+										<tr>
+											<td rowspan="2" class="title">
+												<h3>
+													<a href="http://search.10jqka.com.cn/psearch?w=方华生&source=pc_~site~info~resultpage~ggjs~baike" target="_blank" class="person_info">方华生</a>
+												</h3>
+											</td>
+											<td class="jobs" style="width: 150px;">董事长,董事</td>
+											<td class="date" style="width: 170px;"><span>公告日期：</span>2015-12-18</td>
+											<td class="date"><span>本届任期：</span>2015-12-17 至 2018-12-16</td>
+										</tr>
+										<tr>
+											<td class="intro">男  56岁  硕士</td>
+											<td class="salary"><span>薪酬：</span>0.00万元</td>
+											<td>
+												<div class="tipbox_wrap" style="z-index: 99">
+													<span>持股数：</span>
+													<span class="hold">1634.67万股</span>
+												</div>
+											</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="4" class="mainintro">
+												<div>
+													<p>方华生,男,1962年出生,中国国籍,无永久境外居留权,硕士研究生。1984年至1989年在中南政法学院(现中南财经政法大学)经济法系任教;1989年3月至2000年3月在中国政法大学经济法系任教;2000年7月至今担任北京翰楚达投资顾问有限公司董事长;自2009年4月起任博爱新开源制药股份有限公司董事,现任博爱新开源制药股份有限公司董事长一职。</p>
+													<p style="text-align:right">此简介更新于2015-12-18</p>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</td>
+						<td class="tl">董事长,董事</td>
+						<td>
+														<div>
+								<span>1634.67万股</span>
+							</div>
+															
+						</td>
+																									<th class="tc">2</th>
+						<td class="tc name">
+							<a onclick="TA.log({'id':'f10_gszl_ggjs','nj':1})" class="turnto" href="javascript:void(0)">杨海江</a>
+							<div class="person_table hidden">
+								<a class="close" href="javascript:void(0);">×</a>
+								<table class="m_table ggintro">
+									<thead>
+										<tr>
+											<td rowspan="2" class="title">
+												<h3>
+													<a href="http://search.10jqka.com.cn/psearch?w=杨海江&source=pc_~site~info~resultpage~ggjs~baike" target="_blank" class="person_info">杨海江</a>
+												</h3>
+											</td>
+											<td class="jobs" style="width: 150px;">副董事长,董事</td>
+											<td class="date" style="width: 170px;"><span>公告日期：</span>2015-12-18</td>
+											<td class="date"><span>本届任期：</span>2015-12-17 至 2018-12-16</td>
+										</tr>
+										<tr>
+											<td class="intro">男  65岁  高中</td>
+											<td class="salary"><span>薪酬：</span>22.81万元</td>
+											<td>
+												<div class="tipbox_wrap" style="z-index: 99">
+													<span>持股数：</span>
+													<span class="hold">1122.80万股</span>
+												</div>
+											</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="4" class="mainintro">
+												<div>
+													<p>杨海江,男,1953年出生,中国国籍,无永久境外居留权,高中学历。1966年参加工作,1999年任博爱县食品公司经理,2003年起任博爱新开源制药有限公司董事、曾担任博爱新开源制药股份有限公司董事长一职,现任博爱新开源制药股份有限公司副董事长。</p>
+													<p style="text-align:right">此简介更新于2015-12-18</p>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</td>
+						<td class="tl">副董事长,董事</td>
+						<td>
+														<div class="manager_tip" style="z-index:98">
+								<s class="arrow hidden"></s>
+								<span class="to_tip">1122.80万股</span>
+								<div class="tip_detail hidden">
+									<p>2018-01-16增持20000股</p>									
+								</div>
+							</div>
+															
+						</td>
+															</tr>
+																			<tr>
+																<th class="tc">3</th>
+						<td class="tc name">
+							<a onclick="TA.log({'id':'f10_gszl_ggjs','nj':1})" class="turnto" href="javascript:void(0)">王坚强</a>
+							<div class="person_table hidden">
+								<a class="close" href="javascript:void(0);">×</a>
+								<table class="m_table ggintro">
+									<thead>
+										<tr>
+											<td rowspan="2" class="title">
+												<h3>
+													<a href="http://search.10jqka.com.cn/psearch?w=王坚强&source=pc_~site~info~resultpage~ggjs~baike" target="_blank" class="person_info">王坚强</a>
+												</h3>
+											</td>
+											<td class="jobs" style="width: 150px;">副董事长,董事</td>
+											<td class="date" style="width: 170px;"><span>公告日期：</span>2015-12-18</td>
+											<td class="date"><span>本届任期：</span>2009-04-26 至 2018-12-16</td>
+										</tr>
+										<tr>
+											<td class="intro">男  52岁  硕士</td>
+											<td class="salary"><span>薪酬：</span>19.27万元</td>
+											<td>
+												<div class="tipbox_wrap" style="z-index: 99">
+													<span>持股数：</span>
+													<span class="hold">1508.48万股</span>
+												</div>
+											</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="4" class="mainintro">
+												<div>
+													<p>王坚强,男,1966年出生,中国国籍,无永久境外居留权,硕士研究生。曾任解放军第一军医大学讲师,日本东京大学客座研究员,山西新联友滤材有限公司总经理,新联谊(天津)国际工贸有限公司总经理。2003年起任博爱新开源制药有限公司董事。现任博爱新开源制药股份有限公司副董事长兼技术总监。(2)独立董事</p>
+													<p style="text-align:right">此简介更新于2015-12-18</p>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</td>
+						<td class="tl">副董事长,董事</td>
+						<td>
+														<div class="manager_tip" style="z-index:97">
+								<s class="arrow hidden"></s>
+								<span class="to_tip">1508.48万股</span>
+								<div class="tip_detail hidden">
+									<p>2018-02-12增持40000股</p>									
+								</div>
+							</div>
+															
+						</td>
+																									<th class="tc">4</th>
+						<td class="tc name">
+							<a onclick="TA.log({'id':'f10_gszl_ggjs','nj':1})" class="turnto" href="javascript:void(0)">王东虎</a>
+							<div class="person_table hidden">
+								<a class="close" href="javascript:void(0);">×</a>
+								<table class="m_table ggintro">
+									<thead>
+										<tr>
+											<td rowspan="2" class="title">
+												<h3>
+													<a href="http://search.10jqka.com.cn/psearch?w=王东虎&source=pc_~site~info~resultpage~ggjs~baike" target="_blank" class="person_info">王东虎</a>
+												</h3>
+											</td>
+											<td class="jobs" style="width: 150px;">董事</td>
+											<td class="date" style="width: 170px;"><span>公告日期：</span>2015-12-18</td>
+											<td class="date"><span>本届任期：</span>2009-04-26 至 2018-12-16</td>
+										</tr>
+										<tr>
+											<td class="intro">男  64岁  硕士</td>
+											<td class="salary"><span>薪酬：</span>19.21万元</td>
+											<td>
+												<div class="tipbox_wrap" style="z-index: 99">
+													<span>持股数：</span>
+													<span class="hold">3340.25万股</span>
+												</div>
+											</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="4" class="mainintro">
+												<div>
+													<p>王东虎,男,1954年出生,中国国籍,无永久境外居留权,硕士研究生学历。曾任山西省阳城县山城煤矿矿长,山西新联友滤材有限公司副董事长,2003年起任博爱新开源制药有限公司董事。曾被晋城市人民政府授予“优秀农民企业家”称号,被山西省煤炭厅、国家能源部评为优秀矿长。现任博爱新开源制药股份有限公司董事兼总经理。</p>
+													<p style="text-align:right">此简介更新于2015-12-18</p>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</td>
+						<td class="tl">董事</td>
+						<td>
+														<div class="manager_tip" style="z-index:96">
+								<s class="arrow hidden"></s>
+								<span class="to_tip">3340.25万股</span>
+								<div class="tip_detail hidden">
+									<p>2018-01-16增持20000股</p>									
+								</div>
+							</div>
+															
+						</td>
+															</tr>
+																			<tr>
+																<th class="tc">5</th>
+						<td class="tc name">
+							<a onclick="TA.log({'id':'f10_gszl_ggjs','nj':1})" class="turnto" href="javascript:void(0)">康熙雄</a>
+							<div class="person_table hidden">
+								<a class="close" href="javascript:void(0);">×</a>
+								<table class="m_table ggintro">
+									<thead>
+										<tr>
+											<td rowspan="2" class="title">
+												<h3>
+													<a href="http://search.10jqka.com.cn/psearch?w=康熙雄&source=pc_~site~info~resultpage~ggjs~baike" target="_blank" class="person_info">康熙雄</a>
+												</h3>
+											</td>
+											<td class="jobs" style="width: 150px;">独立董事</td>
+											<td class="date" style="width: 170px;"><span>公告日期：</span>2015-12-17</td>
+											<td class="date"><span>本届任期：</span>2015-12-17 至 2018-12-16</td>
+										</tr>
+										<tr>
+											<td class="intro">男  66岁  博士</td>
+											<td class="salary"><span>薪酬：</span>7.20万元</td>
+											<td>
+												<div class="tipbox_wrap" style="z-index: 99">
+													<span>持股数：</span>
+													<span class="hold">0.00万股</span>
+												</div>
+											</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="4" class="mainintro">
+												<div>
+													<p>康熙雄先生,中国国籍,无境外永久居留权,1952年生,博士学历。历任白求恩医科大学第三医院检验科主任、首都医科大学北京天坛医院实验诊断中心主任、东京大学客座研究员、首都医科大学检验诊断学系主任等职务。现任基蛋生物科技股份有限公司独立董事,兼任中国诊断学指导委员会主任委员、中国检验医师协会副主任委员、中国生物物理学会体外诊断分会副主任委员、芯片标准化协会副主任委员、中国实验室认可委主任评审员、北京博晖创新光电技术股份有限公司独立董事、博爱新开源制药股份有限公司独立董事、广州万孚生物技术股份有限公司独立董事、上海百傲科技股份有限公司独立董事、基蛋生物科技股份有限公司独立董事等职务。</p>
+													<p style="text-align:right">此简介更新于2015-12-17</p>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</td>
+						<td class="tl">独立董事</td>
+						<td>
+														<div>
+								<span>0.00万股</span>
+							</div>
+															
+						</td>
+																									<th class="tc">6</th>
+						<td class="tc name">
+							<a onclick="TA.log({'id':'f10_gszl_ggjs','nj':1})" class="turnto" href="javascript:void(0)">吴德军</a>
+							<div class="person_table hidden">
+								<a class="close" href="javascript:void(0);">×</a>
+								<table class="m_table ggintro">
+									<thead>
+										<tr>
+											<td rowspan="2" class="title">
+												<h3>
+													<a href="http://search.10jqka.com.cn/psearch?w=吴德军&source=pc_~site~info~resultpage~ggjs~baike" target="_blank" class="person_info">吴德军</a>
+												</h3>
+											</td>
+											<td class="jobs" style="width: 150px;">独立董事</td>
+											<td class="date" style="width: 170px;"><span>公告日期：</span>2015-12-17</td>
+											<td class="date"><span>本届任期：</span>2015-12-17 至 2018-12-16</td>
+										</tr>
+										<tr>
+											<td class="intro">男  46岁  博士</td>
+											<td class="salary"><span>薪酬：</span>7.20万元</td>
+											<td>
+												<div class="tipbox_wrap" style="z-index: 99">
+													<span>持股数：</span>
+													<span class="hold">0.00万股</span>
+												</div>
+											</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="4" class="mainintro">
+												<div>
+													<p>吴德军先生:生于1972年,管理学(会计学)博士,中南财经政法大学会计学院副教授、环境资源会计研究中心执行主任、留学生研究生导师组组长,硕士研究生导师,中国会计学会高级会员,香港大学访问学者、澳大利亚科廷大学访问学者。现任湖北福星科技股份有限公司独立董事,公司审计委员会主任委员、提名委员会委员、薪酬与考核委员会委员。</p>
+													<p style="text-align:right">此简介更新于2015-12-17</p>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</td>
+						<td class="tl">独立董事</td>
+						<td>
+														<div>
+								<span>0.00万股</span>
+							</div>
+															
+						</td>
+															</tr>
+																			<tr>
+																<th class="tc">7</th>
+						<td class="tc name">
+							<a onclick="TA.log({'id':'f10_gszl_ggjs','nj':1})" class="turnto" href="javascript:void(0)">孙芾</a>
+							<div class="person_table hidden">
+								<a class="close" href="javascript:void(0);">×</a>
+								<table class="m_table ggintro">
+									<thead>
+										<tr>
+											<td rowspan="2" class="title">
+												<h3>
+													<a href="http://search.10jqka.com.cn/psearch?w=孙芾&source=pc_~site~info~resultpage~ggjs~baike" target="_blank" class="person_info">孙芾</a>
+												</h3>
+											</td>
+											<td class="jobs" style="width: 150px;">独立董事</td>
+											<td class="date" style="width: 170px;"><span>公告日期：</span>2015-12-17</td>
+											<td class="date"><span>本届任期：</span>2015-12-17 至 2018-12-16</td>
+										</tr>
+										<tr>
+											<td class="intro">女  58岁  本科</td>
+											<td class="salary"><span>薪酬：</span>7.20万元</td>
+											<td>
+												<div class="tipbox_wrap" style="z-index: 99">
+													<span>持股数：</span>
+													<span class="hold">0.00万股</span>
+												</div>
+											</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="4" class="mainintro">
+												<div>
+													<p>孙芾,女,1960年出生,中国国籍,无永久境外居留权,本科学历,中共党员。1984年8月至1997年任职卫生部北京医院,历任住院医师、主治医师、副主任医师和检验科副主任。1998年至今任职于北京和睦家医院,现担任主任医师、病理及检验中心主任。曾先后出版著作及发表多篇文章。</p>
+													<p style="text-align:right">此简介更新于2015-12-17</p>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</td>
+						<td class="tl">独立董事</td>
+						<td>
+														<div>
+								<span>0.00万股</span>
+							</div>
+															
+						</td>
+											<th></th>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+													</tbody>
+			</table>
+		</div>
+		    				
+		<div class="m_tab_content" id="ml_002" style="display:none" >
+			<table class="m_table managelist m_hl">
+				<thead>
+					<tr>
+						<th width="5%">序号</th>
+						<th width="13%">姓名</th>
+						<th width="17%">职务</th>
+						<th width="15%">持股数</th>
+						<th width="5%">序号</th>
+						<th width="13%">姓名</th>
+						<th width="17%">职务</th>
+						<th width="15%">持股数</th>
+					</tr>
+				</thead>
+				<tbody>
+																		<tr>
+																<th class="tc">1</th>
+						<td class="tc name">
+							<a onclick="TA.log({'id':'f10_gszl_ggjs','nj':1})" class="turnto" href="javascript:void(0)">阎重朝</a>
+							<div class="person_table hidden">
+								<a class="close" href="javascript:void(0);">×</a>
+								<table class="m_table ggintro">
+									<thead>
+										<tr>
+											<td rowspan="2" class="title">
+												<h3>
+													<a href="http://search.10jqka.com.cn/psearch?w=阎重朝&source=pc_~site~info~resultpage~ggjs~baike" target="_blank" class="person_info">阎重朝</a>
+												</h3>
+											</td>
+											<td class="jobs" style="width: 150px;">监事会主席</td>
+											<td class="date" style="width: 170px;"><span>公告日期：</span>2015-12-18</td>
+											<td class="date"><span>本届任期：</span>2009-04-26 至 2018-12-16</td>
+										</tr>
+										<tr>
+											<td class="intro">男  52岁  本科</td>
+											<td class="salary"><span>薪酬：</span>9.25万元</td>
+											<td>
+												<div class="tipbox_wrap" style="z-index: 99">
+													<span>持股数：</span>
+													<span class="hold">44.25万股</span>
+												</div>
+											</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="4" class="mainintro">
+												<div>
+													<p>阎重朝,1966年出生,中国国籍,无永久境外居留权,本科,工程师。1989年毕业于兰州大学化学系应用化学专业;1989年至今先后工作于河南省博爱县开源精细化工厂、博爱新开源制药有限公司;现任博爱新开源制药股份有限公司第三届监事会主席。</p>
+													<p style="text-align:right">此简介更新于2015-12-18</p>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</td>
+						<td class="tl">监事会主席</td>
+						<td>
+														<div class="manager_tip" style="z-index:99">
+								<s class="arrow hidden"></s>
+								<span class="to_tip">44.25万股</span>
+								<div class="tip_detail hidden">
+									<p>2016-12-29减持15000股</p>									
+								</div>
+							</div>
+															
+						</td>
+																									<th class="tc">2</th>
+						<td class="tc name">
+							<a onclick="TA.log({'id':'f10_gszl_ggjs','nj':1})" class="turnto" href="javascript:void(0)">王文霞</a>
+							<div class="person_table hidden">
+								<a class="close" href="javascript:void(0);">×</a>
+								<table class="m_table ggintro">
+									<thead>
+										<tr>
+											<td rowspan="2" class="title">
+												<h3>
+													<a href="http://search.10jqka.com.cn/psearch?w=王文霞&source=pc_~site~info~resultpage~ggjs~baike" target="_blank" class="person_info">王文霞</a>
+												</h3>
+											</td>
+											<td class="jobs" style="width: 150px;">监事</td>
+											<td class="date" style="width: 170px;"><span>公告日期：</span>2015-12-17</td>
+											<td class="date"><span>本届任期：</span>2009-04-26 至 2018-12-16</td>
+										</tr>
+										<tr>
+											<td class="intro">女  49岁  大专</td>
+											<td class="salary"><span>薪酬：</span>7.32万元</td>
+											<td>
+												<div class="tipbox_wrap" style="z-index: 99">
+													<span>持股数：</span>
+													<span class="hold">0.00万股</span>
+												</div>
+											</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="4" class="mainintro">
+												<div>
+													<p>王文霞女士,1969年出生,中国国籍,无永久境外居留权,大专学历。1988年至今先后工作于河南省博爱县开源精细化工厂、博爱新开源制药有限公司;现任博爱新开源制药股份有限公司研发中心主任,现任博爱新开源制药股份有限公司第三届监事会监事。</p>
+													<p style="text-align:right">此简介更新于2015-12-17</p>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</td>
+						<td class="tl">监事</td>
+						<td>
+														<div>
+								<span>0.00万股</span>
+							</div>
+															
+						</td>
+															</tr>
+																			<tr>
+																<th class="tc">3</th>
+						<td class="tc name">
+							<a onclick="TA.log({'id':'f10_gszl_ggjs','nj':1})" class="turnto" href="javascript:void(0)">刘艳琴</a>
+							<div class="person_table hidden">
+								<a class="close" href="javascript:void(0);">×</a>
+								<table class="m_table ggintro">
+									<thead>
+										<tr>
+											<td rowspan="2" class="title">
+												<h3>
+													<a href="http://search.10jqka.com.cn/psearch?w=刘艳琴&source=pc_~site~info~resultpage~ggjs~baike" target="_blank" class="person_info">刘艳琴</a>
+												</h3>
+											</td>
+											<td class="jobs" style="width: 150px;">职工监事</td>
+											<td class="date" style="width: 170px;"><span>公告日期：</span>2015-12-02</td>
+											<td class="date"><span>本届任期：</span>2009-04-26 至 2018-12-16</td>
+										</tr>
+										<tr>
+											<td class="intro">女  45岁  高中</td>
+											<td class="salary"><span>薪酬：</span>5.31万元</td>
+											<td>
+												<div class="tipbox_wrap" style="z-index: 99">
+													<span>持股数：</span>
+													<span class="hold">0.00万股</span>
+												</div>
+											</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="4" class="mainintro">
+												<div>
+													<p>刘艳琴女士,1973年出生,中国国籍,无永久境外居留权,高中学历。1989年至今先后工作于博爱县化肥厂、河南省博爱县开源精细化工厂、博爱新开源制药有限公司。现为博爱新开源制药股份有限公司第三届监事会职工代表监事。</p>
+													<p style="text-align:right">此简介更新于2015-12-02</p>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</td>
+						<td class="tl">职工监事</td>
+						<td>
+														<div>
+								<span>0.00万股</span>
+							</div>
+															
+						</td>
+											<th></th>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+													</tbody>
+			</table>
+		</div>
+		    				
+		<div class="m_tab_content" id="ml_003" style="display:none" >
+			<table class="m_table managelist m_hl">
+				<thead>
+					<tr>
+						<th width="5%">序号</th>
+						<th width="13%">姓名</th>
+						<th width="17%">职务</th>
+						<th width="15%">持股数</th>
+						<th width="5%">序号</th>
+						<th width="13%">姓名</th>
+						<th width="17%">职务</th>
+						<th width="15%">持股数</th>
+					</tr>
+				</thead>
+				<tbody>
+																		<tr>
+																<th class="tc">1</th>
+						<td class="tc name">
+							<a onclick="TA.log({'id':'f10_gszl_ggjs','nj':1})" class="turnto" href="javascript:void(0)">王东虎</a>
+							<div class="person_table hidden">
+								<a class="close" href="javascript:void(0);">×</a>
+								<table class="m_table ggintro">
+									<thead>
+										<tr>
+											<td rowspan="2" class="title">
+												<h3>
+													<a href="http://search.10jqka.com.cn/psearch?w=王东虎&source=pc_~site~info~resultpage~ggjs~baike" target="_blank" class="person_info">王东虎</a>
+												</h3>
+											</td>
+											<td class="jobs" style="width: 150px;">总经理</td>
+											<td class="date" style="width: 170px;"><span>公告日期：</span>2015-12-18</td>
+											<td class="date"><span>本届任期：</span>2009-04-26 至 2018-12-16</td>
+										</tr>
+										<tr>
+											<td class="intro">男  64岁  硕士</td>
+											<td class="salary"><span>薪酬：</span>19.21万元</td>
+											<td>
+												<div class="tipbox_wrap" style="z-index: 99">
+													<span>持股数：</span>
+													<span class="hold">3340.25万股</span>
+												</div>
+											</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="4" class="mainintro">
+												<div>
+													<p>王东虎,男,1954年出生,中国国籍,无永久境外居留权,硕士研究生学历。曾任山西省阳城县山城煤矿矿长,山西新联友滤材有限公司副董事长,2003年起任博爱新开源制药有限公司董事。曾被晋城市人民政府授予“优秀农民企业家”称号,被山西省煤炭厅、国家能源部评为优秀矿长。现任博爱新开源制药股份有限公司董事兼总经理。</p>
+													<p style="text-align:right">此简介更新于2015-12-18</p>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</td>
+						<td class="tl">总经理</td>
+						<td>
+														<div class="manager_tip" style="z-index:99">
+								<s class="arrow hidden"></s>
+								<span class="to_tip">3340.25万股</span>
+								<div class="tip_detail hidden">
+									<p>2018-01-16增持20000股</p>									
+								</div>
+							</div>
+															
+						</td>
+																									<th class="tc">2</th>
+						<td class="tc name">
+							<a onclick="TA.log({'id':'f10_gszl_ggjs','nj':1})" class="turnto" href="javascript:void(0)">王实刚</a>
+							<div class="person_table hidden">
+								<a class="close" href="javascript:void(0);">×</a>
+								<table class="m_table ggintro">
+									<thead>
+										<tr>
+											<td rowspan="2" class="title">
+												<h3>
+													<a href="http://search.10jqka.com.cn/psearch?w=王实刚&source=pc_~site~info~resultpage~ggjs~baike" target="_blank" class="person_info">王实刚</a>
+												</h3>
+											</td>
+											<td class="jobs" style="width: 150px;">董事会秘书,副总经理</td>
+											<td class="date" style="width: 170px;"><span>公告日期：</span>2018-03-17</td>
+											<td class="date"><span>本届任期：</span>2018-03-15 至 2018-12-16</td>
+										</tr>
+										<tr>
+											<td class="intro">男  29岁  硕士</td>
+											<td class="salary"><span>薪酬：</span>--</td>
+											<td>
+												<div class="tipbox_wrap" style="z-index: 99">
+													<span>持股数：</span>
+													<span class="hold">0.00万股</span>
+												</div>
+											</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="4" class="mainintro">
+												<div>
+													<p>王实刚,男,1989年生,中国国籍,无永久境外居留权,先后就读于中国传媒大学、丹麦奥胡思大学、荷兰阿姆斯特丹大学,硕士研究生学历。2011年就职于《体坛周报》;2017年加入新开源集团。</p>
+													<p style="text-align:right">此简介更新于2018-03-17</p>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</td>
+						<td class="tl">董事会秘书,副总经理</td>
+						<td>
+														<div>
+								<span>0.00万股</span>
+							</div>
+															
+						</td>
+															</tr>
+																			<tr>
+																<th class="tc">3</th>
+						<td class="tc name">
+							<a onclick="TA.log({'id':'f10_gszl_ggjs','nj':1})" class="turnto" href="javascript:void(0)">杨洪波</a>
+							<div class="person_table hidden">
+								<a class="close" href="javascript:void(0);">×</a>
+								<table class="m_table ggintro">
+									<thead>
+										<tr>
+											<td rowspan="2" class="title">
+												<h3>
+													<a href="http://search.10jqka.com.cn/psearch?w=杨洪波&source=pc_~site~info~resultpage~ggjs~baike" target="_blank" class="person_info">杨洪波</a>
+												</h3>
+											</td>
+											<td class="jobs" style="width: 150px;">副总经理</td>
+											<td class="date" style="width: 170px;"><span>公告日期：</span>2015-12-18</td>
+											<td class="date"><span>本届任期：</span>2009-04-26 至 2018-12-16</td>
+										</tr>
+										<tr>
+											<td class="intro">男  44岁  本科</td>
+											<td class="salary"><span>薪酬：</span>9.38万元</td>
+											<td>
+												<div class="tipbox_wrap" style="z-index: 99">
+													<span>持股数：</span>
+													<span class="hold">0.00万股</span>
+												</div>
+											</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="4" class="mainintro">
+												<div>
+													<p>杨洪波,男,1974年出生,中国国籍,无永久境外居留权,本科学历。1990年至1994年在87029部队服役;1994年至2003年,工作于博爱县电业局;2003年起工作于博爱新开源制药有限公司,至今担任博爱新开源制药股份有限公司副总经理一职。</p>
+													<p style="text-align:right">此简介更新于2015-12-18</p>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</td>
+						<td class="tl">副总经理</td>
+						<td>
+														<div>
+								<span>0.00万股</span>
+							</div>
+															
+						</td>
+																									<th class="tc">4</th>
+						<td class="tc name">
+							<a onclick="TA.log({'id':'f10_gszl_ggjs','nj':1})" class="turnto" href="javascript:void(0)">曲云霞</a>
+							<div class="person_table hidden">
+								<a class="close" href="javascript:void(0);">×</a>
+								<table class="m_table ggintro">
+									<thead>
+										<tr>
+											<td rowspan="2" class="title">
+												<h3>
+													<a href="http://search.10jqka.com.cn/psearch?w=曲云霞&source=pc_~site~info~resultpage~ggjs~baike" target="_blank" class="person_info">曲云霞</a>
+												</h3>
+											</td>
+											<td class="jobs" style="width: 150px;">副总经理</td>
+											<td class="date" style="width: 170px;"><span>公告日期：</span>2015-12-18</td>
+											<td class="date"><span>本届任期：</span>2009-04-26 至 2018-12-16</td>
+										</tr>
+										<tr>
+											<td class="intro">女  48岁  本科</td>
+											<td class="salary"><span>薪酬：</span>18.41万元</td>
+											<td>
+												<div class="tipbox_wrap" style="z-index: 99">
+													<span>持股数：</span>
+													<span class="hold">18.00万股</span>
+												</div>
+											</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="4" class="mainintro">
+												<div>
+													<p>曲云霞,女,1970年出生,中国国籍,无永久境外居留权,本科学历。1991年至1993年工作于山西铝厂计控室;1993年至1996年工作于晋城市电子器材有限公司;1999年至2005年,在山西新联友滤材有限公司工作;2005年起工作于博爱新开源制药有限公司,现担任博爱新开源制药股份有限公司副总经理。</p>
+													<p style="text-align:right">此简介更新于2015-12-18</p>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</td>
+						<td class="tl">副总经理</td>
+						<td>
+														<div class="manager_tip" style="z-index:96">
+								<s class="arrow hidden"></s>
+								<span class="to_tip">18.00万股</span>
+								<div class="tip_detail hidden">
+									<p>2017-03-06减持60000股</p>									
+								</div>
+							</div>
+															
+						</td>
+															</tr>
+																			<tr>
+																<th class="tc">5</th>
+						<td class="tc name">
+							<a onclick="TA.log({'id':'f10_gszl_ggjs','nj':1})" class="turnto" href="javascript:void(0)">张德栋</a>
+							<div class="person_table hidden">
+								<a class="close" href="javascript:void(0);">×</a>
+								<table class="m_table ggintro">
+									<thead>
+										<tr>
+											<td rowspan="2" class="title">
+												<h3>
+													<a href="http://search.10jqka.com.cn/psearch?w=张德栋&source=pc_~site~info~resultpage~ggjs~baike" target="_blank" class="person_info">张德栋</a>
+												</h3>
+											</td>
+											<td class="jobs" style="width: 150px;">副总经理</td>
+											<td class="date" style="width: 170px;"><span>公告日期：</span>2015-12-18</td>
+											<td class="date"><span>本届任期：</span>2011-04-10 至 2018-12-16</td>
+										</tr>
+										<tr>
+											<td class="intro">男  46岁  硕士</td>
+											<td class="salary"><span>薪酬：</span>13.68万元</td>
+											<td>
+												<div class="tipbox_wrap" style="z-index: 99">
+													<span>持股数：</span>
+													<span class="hold">0.00万股</span>
+												</div>
+											</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="4" class="mainintro">
+												<div>
+													<p>张德栋,男,1972年生,中国国籍,无境外居留权,在职研究生学历。1991年至今先后工作于河南省博爱县开源精细化工厂(公司前身)、博爱新开源制药股份有限公司。在公司一直从事生产管理工作,曾担任过生产车间主任,研发中心副主任,生产技术部部长,总经理助理,2011年4月10日起任博爱新开源制药股份有限公司副总经理。</p>
+													<p style="text-align:right">此简介更新于2015-12-18</p>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</td>
+						<td class="tl">副总经理</td>
+						<td>
+														<div>
+								<span>0.00万股</span>
+							</div>
+															
+						</td>
+																									<th class="tc">6</th>
+						<td class="tc name">
+							<a onclick="TA.log({'id':'f10_gszl_ggjs','nj':1})" class="turnto" href="javascript:void(0)">任大龙</a>
+							<div class="person_table hidden">
+								<a class="close" href="javascript:void(0);">×</a>
+								<table class="m_table ggintro">
+									<thead>
+										<tr>
+											<td rowspan="2" class="title">
+												<h3>
+													<a href="http://search.10jqka.com.cn/psearch?w=任大龙&source=pc_~site~info~resultpage~ggjs~baike" target="_blank" class="person_info">任大龙</a>
+												</h3>
+											</td>
+											<td class="jobs" style="width: 150px;">副总经理</td>
+											<td class="date" style="width: 170px;"><span>公告日期：</span>2015-12-18</td>
+											<td class="date"><span>本届任期：</span>2015-12-17 至 2018-12-16</td>
+										</tr>
+										<tr>
+											<td class="intro">男  48岁  本科</td>
+											<td class="salary"><span>薪酬：</span>10.00万元</td>
+											<td>
+												<div class="tipbox_wrap" style="z-index: 99">
+													<span>持股数：</span>
+													<span class="hold">523.97万股</span>
+												</div>
+											</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="4" class="mainintro">
+												<div>
+													<p>任大龙,男,1970年出生,中国国籍,无永久境外居留权,本科学历,工学学士。2000年至2006年,就职于北京华美杰润石油新技术开发有限公司,任董事长一职;2006年至今,就职武汉呵尔医疗科技发展有限公司,担任董事长一职。</p>
+													<p style="text-align:right">此简介更新于2015-12-18</p>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</td>
+						<td class="tl">副总经理</td>
+						<td>
+														<div>
+								<span>523.97万股</span>
+							</div>
+															
+						</td>
+															</tr>
+																			<tr>
+																<th class="tc">7</th>
+						<td class="tc name">
+							<a onclick="TA.log({'id':'f10_gszl_ggjs','nj':1})" class="turnto" href="javascript:void(0)">王新梦</a>
+							<div class="person_table hidden">
+								<a class="close" href="javascript:void(0);">×</a>
+								<table class="m_table ggintro">
+									<thead>
+										<tr>
+											<td rowspan="2" class="title">
+												<h3>
+													<a href="http://search.10jqka.com.cn/psearch?w=王新梦&source=pc_~site~info~resultpage~ggjs~baike" target="_blank" class="person_info">王新梦</a>
+												</h3>
+											</td>
+											<td class="jobs" style="width: 150px;">副总经理</td>
+											<td class="date" style="width: 170px;"><span>公告日期：</span>2015-12-18</td>
+											<td class="date"><span>本届任期：</span>2015-12-17 至 2018-12-16</td>
+										</tr>
+										<tr>
+											<td class="intro">男  47岁  本科</td>
+											<td class="salary"><span>薪酬：</span>15.16万元</td>
+											<td>
+												<div class="tipbox_wrap" style="z-index: 99">
+													<span>持股数：</span>
+													<span class="hold">42.41万股</span>
+												</div>
+											</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="4" class="mainintro">
+												<div>
+													<p>王新梦,男,1971年出生,中国国籍,无永久境外居留权,本科学历,工学学士。曾先后在辉瑞制药、双鹤药业担任销售及市场管理职位,在北京崇博达宏基因技术有限公司任总经理一职,在中国医学基金会“百姓安全合理用药专项基金”任主任一职,现任长沙三济生物科技有限公司总经理一职。</p>
+													<p style="text-align:right">此简介更新于2015-12-18</p>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</td>
+						<td class="tl">副总经理</td>
+						<td>
+														<div>
+								<span>42.41万股</span>
+							</div>
+															
+						</td>
+																									<th class="tc">8</th>
+						<td class="tc name">
+							<a onclick="TA.log({'id':'f10_gszl_ggjs','nj':1})" class="turnto" href="javascript:void(0)">邱燕南</a>
+							<div class="person_table hidden">
+								<a class="close" href="javascript:void(0);">×</a>
+								<table class="m_table ggintro">
+									<thead>
+										<tr>
+											<td rowspan="2" class="title">
+												<h3>
+													<a href="http://search.10jqka.com.cn/psearch?w=邱燕南&source=pc_~site~info~resultpage~ggjs~baike" target="_blank" class="person_info">邱燕南</a>
+												</h3>
+											</td>
+											<td class="jobs" style="width: 150px;">副总经理</td>
+											<td class="date" style="width: 170px;"><span>公告日期：</span>2015-12-18</td>
+											<td class="date"><span>本届任期：</span>2015-12-17 至 2018-12-16</td>
+										</tr>
+										<tr>
+											<td class="intro">男  45岁  本科</td>
+											<td class="salary"><span>薪酬：</span>0.00万元</td>
+											<td>
+												<div class="tipbox_wrap" style="z-index: 99">
+													<span>持股数：</span>
+													<span class="hold">216.61万股</span>
+												</div>
+											</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="4" class="mainintro">
+												<div>
+													<p>邱燕南,男,1973年出生,中国国籍,无永久境外居留权,本科学历,生物化学,国际会计双学位。先后就职于几家世界500强外资企业,负责销售及市场管理等方面的工作。2006年成立上海仁科生物科技有限公司,2010年与合伙人共同创立晶能生物技术(上海)有限公司,任公司执行董事。</p>
+													<p style="text-align:right">此简介更新于2015-12-18</p>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</td>
+						<td class="tl">副总经理</td>
+						<td>
+														<div>
+								<span>216.61万股</span>
+							</div>
+															
+						</td>
+															</tr>
+																			<tr>
+																<th class="tc">9</th>
+						<td class="tc name">
+							<a onclick="TA.log({'id':'f10_gszl_ggjs','nj':1})" class="turnto" href="javascript:void(0)">刘爱民</a>
+							<div class="person_table hidden">
+								<a class="close" href="javascript:void(0);">×</a>
+								<table class="m_table ggintro">
+									<thead>
+										<tr>
+											<td rowspan="2" class="title">
+												<h3>
+													<a href="http://search.10jqka.com.cn/psearch?w=刘爱民&source=pc_~site~info~resultpage~ggjs~baike" target="_blank" class="person_info">刘爱民</a>
+												</h3>
+											</td>
+											<td class="jobs" style="width: 150px;">财务总监</td>
+											<td class="date" style="width: 170px;"><span>公告日期：</span>2015-12-18</td>
+											<td class="date"><span>本届任期：</span>2012-03-04 至 2018-12-16</td>
+										</tr>
+										<tr>
+											<td class="intro">男  45岁  大专</td>
+											<td class="salary"><span>薪酬：</span>8.56万元</td>
+											<td>
+												<div class="tipbox_wrap" style="z-index: 99">
+													<span>持股数：</span>
+													<span class="hold">17.54万股</span>
+												</div>
+											</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="4" class="mainintro">
+												<div>
+													<p>刘爱民,男,1973年生,中国国籍,无境外居留权,大专学历。1995年至今先后工作于河南省博爱县开源精细化工厂、博爱新开源制药有限公司、博爱新开源制药股份有限公司。在公司一直从事财务管理工作,曾担任过公司财务科科长,财务部部长。现任博爱新开源制药股份有限公司财务总监。</p>
+													<p style="text-align:right">此简介更新于2015-12-18</p>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</td>
+						<td class="tl">财务总监</td>
+						<td>
+														<div class="manager_tip" style="z-index:91">
+								<s class="arrow hidden"></s>
+								<span class="to_tip">17.54万股</span>
+								<div class="tip_detail hidden">
+									<p>2016-01-14减持17000股</p>									
+								</div>
+							</div>
+															
+						</td>
+																									<th class="tc">10</th>
+						<td class="tc name">
+							<a onclick="TA.log({'id':'f10_gszl_ggjs','nj':1})" class="turnto" href="javascript:void(0)">王坚强</a>
+							<div class="person_table hidden">
+								<a class="close" href="javascript:void(0);">×</a>
+								<table class="m_table ggintro">
+									<thead>
+										<tr>
+											<td rowspan="2" class="title">
+												<h3>
+													<a href="http://search.10jqka.com.cn/psearch?w=王坚强&source=pc_~site~info~resultpage~ggjs~baike" target="_blank" class="person_info">王坚强</a>
+												</h3>
+											</td>
+											<td class="jobs" style="width: 150px;">技术总监</td>
+											<td class="date" style="width: 170px;"><span>公告日期：</span>2015-12-18</td>
+											<td class="date"><span>本届任期：</span>2009-04-26 至 2018-12-16</td>
+										</tr>
+										<tr>
+											<td class="intro">男  52岁  硕士</td>
+											<td class="salary"><span>薪酬：</span>19.27万元</td>
+											<td>
+												<div class="tipbox_wrap" style="z-index: 99">
+													<span>持股数：</span>
+													<span class="hold">1508.48万股</span>
+												</div>
+											</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="4" class="mainintro">
+												<div>
+													<p>王坚强,男,1966年出生,中国国籍,无永久境外居留权,硕士研究生。曾任解放军第一军医大学讲师,日本东京大学客座研究员,山西新联友滤材有限公司总经理,新联谊(天津)国际工贸有限公司总经理。2003年起任博爱新开源制药有限公司董事。现任博爱新开源制药股份有限公司副董事长兼技术总监。(2)独立董事</p>
+													<p style="text-align:right">此简介更新于2015-12-18</p>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</td>
+						<td class="tl">技术总监</td>
+						<td>
+														<div class="manager_tip" style="z-index:90">
+								<s class="arrow hidden"></s>
+								<span class="to_tip">1508.48万股</span>
+								<div class="tip_detail hidden">
+									<p>2018-02-12增持40000股</p>									
+								</div>
+							</div>
+															
+						</td>
+													</tbody>
+			</table>
+		</div>
+				<p class="pt5">注：点击高管姓名查看高管简历介绍；点击持股数查询所有持股变动</p>
+	</div>
+	<div class="ft"></div>
+</div>
+
+<!-- 发行相关 -->
+<div class="m_box company_detail" id="publish" stat="company_publish">
+	<div class="hd">
+		<h2>发行相关</h2>
+	</div>
+	<div class="bd pr">
+				<table class="m_table">
+			<tr>
+				<td><strong class="hltip fl">成立日期：</strong><span>2003-03-13</span></td>
+				<td><strong class="hltip fl">发行数量：</strong><span>900.00万股</span></td>
+				<td><strong class="hltip fl">发行价格：</strong><span>30.00元</span></td>
+			</tr>
+			<tr>
+				<td><strong class="hltip fl">上市日期：</strong><span>2010-08-25</span></td>
+				<td><strong class="hltip fl">发行市盈率：</strong><span>61.2200倍</span></td>
+				<td><strong class="hltip fl">预计募资：</strong><span>1.23亿元</span></td>
+			</tr>
+			<tr>
+				<td><strong class="hltip fl">首日开盘价：</strong><span>60.00元</span></td>
+				<td><strong class="hltip fl">发行<span class="hltip  iwcclick" taname='f10_stock_iwc_zql' content='中签率= 股票发行股数/有效申购股数*100%'  data-url='http://www.iwencai.com/yike/detail/auid/6fdbde6ab15aba60?qs=client_f10_baike_4' >中签率</span>：</strong>
+				<span>0.56%</span></td>
+				<td><strong class="hltip fl">实际募资：</strong><span>2.7亿元</span></td>
+			</tr>
+			<tr> <td colspan="3">
+					<div class="main_sell">
+						<strong class="hltip iwcclick" taname='f10_stock_iwc_zql' content='主承销商，是指在股票发行中独家承销或牵头组织承销团经销的证券经营机构。'  data-url='http://www.iwencai.com/yike/detail/auid/2d7c8f7de1372d8e?qs=client_f10_baike_4' >主承销商：</strong><span>民生证券有限责任公司</span>
+					</div>
+					<div class="main_sell">
+						<strong class="hltip">上市保荐人：</strong><span>民生证券有限责任公司</span>
+					</div>
+				</td>
+			</tr>
+			<tr class="intro">
+				<td colspan="3">
+					<strong class="hltip">历史沿革：</strong>
+										<p class="tip lh24" style="text-indent: 0;">　　博爱新开源医疗科技集团股份有限公司（以下简称“公司”或“本公司”）是由博爱新开源制药有限公司（以下简称“新开源有限”）整体变更而来。新开源有限是2003年2月28日经博爱县人民政府博政文（2003）10号文批准，由博爱县开源精细化工厂等四家法人单位和20位自然人组建而成，初始注册资本800万元，其中博爱县开源精细化工厂以实物入股50万元，占总股份的6.25%；新联谊（天津）国际工贸有限公司以现金入股200万元，占总股份的25%；晋城中嘉煤炭实业有限公司以现金入股300万元，占总股份的37.50%；山西新联友滤材有限公司以现金入股107万元，占总股份的13.375%；张东风等20位自然人以现...<a href="javascript:void(0)" class="more fr">查看全部▼</a></p>
+					<p class="tip lh24 none"  style="text-indent: 0;">　　博爱新开源医疗科技集团股份有限公司（以下简称“公司”或“本公司”）是由博爱新开源制药有限公司（以下简称“新开源有限”）整体变更而来。新开源有限是2003年2月28日经博爱县人民政府博政文（2003）10号文批准，由博爱县开源精细化工厂等四家法人单位和20位自然人组建而成，初始注册资本800万元，其中博爱县开源精细化工厂以实物入股50万元，占总股份的6.25%；新联谊（天津）国际工贸有限公司以现金入股200万元，占总股份的25%；晋城中嘉煤炭实业有限公司以现金入股300万元，占总股份的37.50%；山西新联友滤材有限公司以现金入股107万元，占总股份的13.375%；张东风等20位自然人以现金入股143万元，占总股份的17.875%。<br>　　经过历次股权转让和增资扩股，截止2008年12月31日，新开源有限注册资本为2,700万元，王东虎持股718万元，占总股份的26.58%；杨海江、王坚强分别持股349万，各占总股份的12.93%；晋城市信泰商贸有限公司、北京翰楚达投资顾问有限公司分别持股150万元，各占总股份的5.56%；吴从周、鲍婕分别持股100万元，各占总股份的3.70%；高拙持股73万元，占总股份的2.70%；张建军等30人共持股711万，占总股份的26.34%。<br>　　2009年4月25日，新开源有限召开股东会会议，会议决议通过公司整体变更为股份有限公司，公司名称由博爱新开源制药有限公司变更为博爱新开源制药股份有限公司。新开源有限以2008年12月31日经过审计的净资产43,971,935.48元按1：0.614的比例折股，折后的股本为27,000,000.00元，其余16,971,935.48元记入资本公积，并于2009年5月18日领取了变更后的营业执照。<br>　　根据公司2010年第一次临时股东大会决议的规定，并经中国证券监督管理委员会《关于核准博爱新开源制药股份有限公司首次公开发行股票并在创业板上市的批复》（证监许可[2010]1033号）的核准，2010年8月，公司采用网下向配售对象询价配售和网上向社会公众投资者定价发行相结合的方式首次向社会公开发行人民币普通股（A股）900万股，发行后公司总股本为3,600万股，并经深圳证券交易所深圳上[2010]207号批准于2010年8月25日在深圳证券交易所挂牌上市。<br>　　2011年5月27日，根据公司在2011年5月8日召开的2010年度股东大会审议通过的公司2010年度利润分配及资本公积转增股本方案：以公司2010年12月31日的总股本36,000,000股为基数，由资本公积向全体股东每10股转增10股，合计转增36,000,000股，转增后公司总股本增加到72,000,000股。<br>　　2012年4月28日，根据公司2011年度股东大会决议和修改后的章程规定，增加注册资本人民币43,200,000.00元，由未分配利润和资本公积转增股本，变更后股本增加到11,520万股，注册资本增加到11,520万元。<br>　　2015年9月9日，根据公司2015年1月16日召开的2015年第一次临时股东大会决议和修改后的章程规定，经中国证券监督管理委员会《关于核准博爱新开源制药股份有限公司向方华生等发行股份购买资产并募集配套资金的批复》（证监许可[2015]1767号）批准，增加注册资本人民币5,528.24万元，由呵尔医疗全体6名股东以其持有的呵尔医疗100%股权、三济生物全体22名股东以其持有的三济生物100%股权、晶能生物全体5名股东以其持有的晶能生物100%股权及王东虎、王坚强和胡兵来3名特定投资者以货币资金缴足。变更后的注册资本为17,048.24万元。<br>　　公司注册地:河南省焦作市博爱县文化路(东段)1888号，总部办公地：河南省焦作市博爱县文化路(东段)1888号。<a href="javascript:void(0)" class="less fr">收起▲</a></p>
+									</td>
+			</tr>
+		</table>
+			</div>
+	<div class="ft"></div>
+</div>
+
+<div class="m_box gssj_scroll" id="share" stat="company_share">
+	<div class="hd">
+		<h2>参股控股公司</h2>
+	</div>
+	<div class="bd pr">
+		<table class="m_table m_hl ggintro business" id="ckg_table">
+			<caption class="m_cap tip">
+				<div class="fr">上市公司最新公告日期：<span class="hl">2018-06-21</span></div>
+				<span class="f14">参股或控股公司：<strong>14</strong> 家，
+				其中合并报表的有：<strong>11</strong> 家。</span>
+			</caption>
+			<thead>
+				<tr>
+					<th width="25px" class="nosort">序号</th>
+					<th width="170px" class="nosort">关联公司名称</th>
+					<th width="50px" class="nosort">参控关系</th>
+					<th width="50px">参控比例<s></s></th>
+					<th width="60px">投资金额(元)<s></s></th>
+					<th width="80px">被参控公司净<br />利润(元)<s></s></th>
+					<th width="50px">是否报表<br />合并<s></s></th>
+					<th width="140px" class="nosort">被参股公司主营业务</th>
+				</tr>
+			</thead>
+			<tbody>
+										<tr>
+					<td style="color:#ccc;text-align:center">-</td>
+					<td  style="text-align:left">
+						<p class="institionName"  onclick="sendTalog('f10_stock_company_click_ggsjdetail')" orgid="T000163372"  href="javascript:void(0)" >武汉呵尔医疗科技发展有限公司</p>
+						<div class="gssjBox hidden "></div>
+					</td>
+					<td style="text-align:left">子公司</td>
+					<td>100.00%</td>
+					<td>3.43亿</td>
+					<td>2026.25万</td>
+					<td style="text-align:center">是</td>
+					<td style="text-align:left">
+										主要从事肿瘤早期诊断有关的医疗诊断... &nbsp;<a class="m_more" href="javascript:void(0)" data="主要从事肿瘤早期诊断有关的医疗诊断设备的研发、生产、销售与服务" targ="box_923ec643f49885245d6bcd7be31ebb58" title="查看详细"></a>
+										</td>
+				</tr>
+							<tr>
+					<td style="color:#ccc;text-align:center">-</td>
+					<td  style="text-align:left">
+						<p class="institionName"  onclick="sendTalog('f10_stock_company_click_ggsjdetail')" orgid="T000163375"  href="javascript:void(0)" >长沙三济生物科技有限公司</p>
+						<div class="gssjBox hidden "></div>
+					</td>
+					<td style="text-align:left">子公司</td>
+					<td>100.00%</td>
+					<td>2.48亿</td>
+					<td>1215.20万</td>
+					<td style="text-align:center">是</td>
+					<td style="text-align:left">
+										主要以“基因测序试剂研发生产销售”... &nbsp;<a class="m_more" href="javascript:void(0)" data="主要以“基因测序试剂研发生产销售”、“个体化合理用药整体解决方案”与“提供细胞遗传学检测服务”三大模块为核心业务" targ="box_f7f0b072701b265db04946312a65e00f" title="查看详细"></a>
+										</td>
+				</tr>
+							<tr>
+					<td style="color:#ccc;text-align:center">-</td>
+					<td  style="text-align:left">
+						<p class="institionName"  onclick="sendTalog('f10_stock_company_click_ggsjdetail')" orgid="T000163374"  href="javascript:void(0)" >晶能生物技术(上海)有限公司</p>
+						<div class="gssjBox hidden "></div>
+					</td>
+					<td style="text-align:left">子公司</td>
+					<td>100.00%</td>
+					<td>1.21亿</td>
+					<td>353.68万</td>
+					<td style="text-align:center">是</td>
+					<td style="text-align:left">
+										主要提供新一代DNA高能量测序和基... &nbsp;<a class="m_more" href="javascript:void(0)" data="主要提供新一代DNA高能量测序和基因芯片技术的应用和推广、生物信息分析服务等创新型基因测序技术" targ="box_1cbe3302a87cdbb2f3d0a2f7ff3c381d" title="查看详细"></a>
+										</td>
+				</tr>
+							<tr>
+					<td style="color:#ccc;text-align:center">-</td>
+					<td  style="text-align:left">
+						<p   href="javascript:void(0)" >新动力股份有限公司</p>
+						<div class="gssjBox hidden "></div>
+					</td>
+					<td style="text-align:left">合营企业</td>
+					<td>31.92%</td>
+					<td>1550.04万</td>
+					<td>-</td>
+					<td style="text-align:center">-</td>
+					<td style="text-align:left">
+																				</td>
+				</tr>
+							<tr>
+					<td style="color:#ccc;text-align:center">-</td>
+					<td  style="text-align:left">
+						<p   href="javascript:void(0)" >新开源(上海)医疗科技有限公司</p>
+						<div class="gssjBox hidden "></div>
+					</td>
+					<td style="text-align:left">子公司</td>
+					<td>100.00%</td>
+					<td>1000.00万</td>
+					<td>-</td>
+					<td style="text-align:center">-</td>
+					<td style="text-align:left">
+																				</td>
+				</tr>
+							<tr>
+					<td style="color:#ccc;text-align:center">-</td>
+					<td  style="text-align:left">
+						<p class="institionName"  onclick="sendTalog('f10_stock_company_click_ggsjdetail')" orgid="T000663693"  href="javascript:void(0)" >博爱新开源制药化工设备有限公司</p>
+						<div class="gssjBox hidden "></div>
+					</td>
+					<td style="text-align:left">子公司</td>
+					<td>100.00%</td>
+					<td>572.14万</td>
+					<td>-</td>
+					<td style="text-align:center">是</td>
+					<td style="text-align:left">
+																				</td>
+				</tr>
+							<tr>
+					<td style="color:#ccc;text-align:center">-</td>
+					<td  style="text-align:left">
+						<p class="institionName"  onclick="sendTalog('f10_stock_company_click_ggsjdetail')" orgid="T000663692"  href="javascript:void(0)" >博爱新开源(北京)医疗科技发展有限公司</p>
+						<div class="gssjBox hidden "></div>
+					</td>
+					<td style="text-align:left">子公司</td>
+					<td>-</td>
+					<td>405.00万</td>
+					<td>-</td>
+					<td style="text-align:center">是</td>
+					<td style="text-align:left">
+																				</td>
+				</tr>
+							<tr>
+					<td style="color:#ccc;text-align:center">-</td>
+					<td  style="text-align:left">
+						<p class="institionName"  onclick="sendTalog('f10_stock_company_click_ggsjdetail')" orgid="T000663694"  href="javascript:void(0)" >天津雅瑞姿医药科技有限公司</p>
+						<div class="gssjBox hidden "></div>
+					</td>
+					<td style="text-align:left">子公司</td>
+					<td>100.00%</td>
+					<td>369.00万</td>
+					<td>-</td>
+					<td style="text-align:center">是</td>
+					<td style="text-align:left">
+																				</td>
+				</tr>
+							<tr>
+					<td style="color:#ccc;text-align:center">-</td>
+					<td  style="text-align:left">
+						<p class="institionName"  onclick="sendTalog('f10_stock_company_click_ggsjdetail')" orgid="T000109387"  href="javascript:void(0)" >天津博爱新开源国际贸易有限公司</p>
+						<div class="gssjBox hidden "></div>
+					</td>
+					<td style="text-align:left">子公司</td>
+					<td>100.00%</td>
+					<td>50.00万</td>
+					<td>-</td>
+					<td style="text-align:center">是</td>
+					<td style="text-align:left">
+																				</td>
+				</tr>
+							<tr>
+					<td style="color:#ccc;text-align:center">-</td>
+					<td  style="text-align:left">
+						<p   href="javascript:void(0)" >博爱新开源化学有限公司</p>
+						<div class="gssjBox hidden "></div>
+					</td>
+					<td style="text-align:left">子公司</td>
+					<td>100.00%</td>
+					<td>42.50万</td>
+					<td>-</td>
+					<td style="text-align:center">是</td>
+					<td style="text-align:left">
+																				</td>
+				</tr>
+							<tr>
+					<td style="color:#ccc;text-align:center">-</td>
+					<td  style="text-align:left">
+						<p   href="javascript:void(0)" >新开源瑞典有限责任公司</p>
+						<div class="gssjBox hidden "></div>
+					</td>
+					<td style="text-align:left">子公司</td>
+					<td>100.00%</td>
+					<td>39.31万</td>
+					<td>-</td>
+					<td style="text-align:center">是</td>
+					<td style="text-align:left">
+																				</td>
+				</tr>
+							<tr>
+					<td style="color:#ccc;text-align:center">-</td>
+					<td  style="text-align:left">
+						<p   href="javascript:void(0)" >合同新开源制药有限公司</p>
+						<div class="gssjBox hidden "></div>
+					</td>
+					<td style="text-align:left">合营企业</td>
+					<td>-</td>
+					<td>19.87万</td>
+					<td>-</td>
+					<td style="text-align:center">-</td>
+					<td style="text-align:left">
+																				</td>
+				</tr>
+							<tr>
+					<td style="color:#ccc;text-align:center">-</td>
+					<td  style="text-align:left">
+						<p   href="javascript:void(0)" >博爱新开源精准医疗科技有限公司</p>
+						<div class="gssjBox hidden "></div>
+					</td>
+					<td style="text-align:left">子公司</td>
+					<td>100.00%</td>
+					<td>-</td>
+					<td>-</td>
+					<td style="text-align:center">是</td>
+					<td style="text-align:left">
+																				</td>
+				</tr>
+							<tr>
+					<td style="color:#ccc;text-align:center">-</td>
+					<td  style="text-align:left">
+						<p class="institionName"  onclick="sendTalog('f10_stock_company_click_ggsjdetail')" orgid="T004459405"  href="javascript:void(0)" >杭州三济生物科技有限公司</p>
+						<div class="gssjBox hidden "></div>
+					</td>
+					<td style="text-align:left">子公司</td>
+					<td>51.00%</td>
+					<td>-</td>
+					<td>-</td>
+					<td style="text-align:center">是</td>
+					<td style="text-align:left">
+																				</td>
+				</tr>
+						</tbody>
+		</table>
+		<div class="rp_tipbox zyyw_box none" style="width:190px">
+		    <div class="tipbox_bd p0_5">
+		    <table class="m_table" style="width:180px">
+				<thead>
+					<tr>
+						<th class="tl">主营业务详情：</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="tl" id="busi"></td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+			<s class="arrow" style="right:25px"></s>
+		</div>
+		<div class="pager clearfix">
+						
+									<div class="fr pagernav pagescroll" tag='share'>
+				<ul class="clearfix fr">
+									<li  id="ckg_table_fy1">
+						<a href="javascript:void(0)" onclick="ckg_sorter.move(1,'ckg_table_fy1')">1</a>
+						<s class="lb"></s><s class="rb"></s>
+					</li>
+									<li  id="ckg_table_fy2">
+						<a href="javascript:void(0)" onclick="ckg_sorter.move(2,'ckg_table_fy2')">2</a>
+						<s class="lb"></s><s class="rb"></s>
+					</li>
+								</ul>
+			</div>
+					</div>
+	</div>
+	<div class="ft"></div>
+</div>
+
+
+<input type="hidden" id="eventtype" value="click" />
+		</div>
+		<!-- F10 Content End -->
+ 
+<!-- F10 Footer Start -->
+		<div class="footer">
+		<div class="links">
+		    <a href="http://stockpage.10jqka.com.cn" target="_blank" onclick="clickTalogStat('jptostock');">同花顺个股页面</a> | 
+		    <a href="http://bbs.10jqka.com.cn/ths,5453,1" target="_blank">F10论坛</a> | 
+		    <a href="http://moni.10jqka.com.cn/" target="_blank">模拟炒股</a> | 
+		    <a href="http://www.10jqka.com.cn/school/" target="_blank">股民学校</a> |
+		    <a href="http://mobile.10jqka.com.cn/?req=pcf10" target="_blank">手机炒股</a>|
+		    <a target="_blank" href=" http://wpa.qq.com/msgrd?v=3&amp;uin=2270716061&amp;site=qq&amp;menu=yes">联系我们</a>
+		</div>
+		<p>免责声明:本信息由同花顺金融研究中心提供，仅供参考，同花顺金融研究中心力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，同花顺金融研究中心不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险。同花顺对此不作任何类型的担保。同花顺不担保服务一定能满足用户的要求，也不担保服务不会受中断，对服务的及时性，安全性，出错发生都不作担保。同花顺对在同花顺上得到的任何信息服务或交易进程不作担保。同花顺提供的包括同花顺理财的所有文章，数据，不构成任何的投资建议，用户查看或依据这些内容所进行的任何行为造成的风险和结果都自行负责，与同花顺无关。 </p>
+		</div>
+<!-- F10 Footer End -->
+    </div>
+    <div class="r-go-top" id="r-go-top"></div>
+</body>
+<input id="stockCode" type="hidden" value="300109">
+<input id="F004" type="hidden" value="1">
+<input id="stockName" type="hidden" value="新开源">
+<input id="cateName"  type="hidden" value="公司资料">
+<input id="catecode"  type="hidden" value="company">
+<input id="fcatecode"  type="hidden" value="company">
+<input id="sid" type="hidden" value="F10new_gszl">
+<input id="fid" type="hidden" value="F10,F10master,F10main,F10new">
+<input id="qid" type="hidden" value="14585038">
+<div style="display:none" id="wordraddom">
+</div>
+<script type="text/javascript" src="http://s.thsi.cn/js/common/cefapi/1.0/cefApi.min.js"></script>
+<script>
+try {
+    external.createObject('Util');
+    document.getElementById("updownchange").style.display = "block";
+} catch (e) {}
+</script>
+<script type="text/javascript" src="http://s.thsi.cn/cb?js/jquery-1.8.3.min.js;js/basic/common/inheritance.js;js/basic/stock/common_v3-1.20180224.js;js/basic/stock/popWin.js;js/basic/common/Model_v2.js;js/basic/stock/;index.js;po_v2.js;scrollBind.js"></script>
+<!--[if IE ]><script type="text/javascript" src="http://s.thsi.cn/js/excanvas.min.js"></script><![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="http://s.thsi.cn/js/basic/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('.company_logo,.btn-gnjx-left, .btn-gnjx-right, .concept_hot_icons,.iwc_searchbar,.iwc_searchbar .tips-icon,#autocomplete_search_input dd .icona,#autocomplete_search_input dd .iconb');</script>
+<![endif]-->
+<script type="text/javascript" src="http://s.thsi.cn/js/basic/jquery.pos-fixed.js"></script>
+<script type="text/javascript" src="http://s.thsi.cn/cb?js/ta.min.js;js/pa.min.js;js/basic/stock/;StatLoad.js;xgcl_mod.js;stat.js"></script>
+<!-- 统计 -->
+<script type="text/javascript" src="http://s.thsi.cn/cb?js/home/;ths_core.min.js;ths_quote.min.js;TAN.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://s.thsi.cn/js/basic/stock/commonLog_v2.js" charset="utf-8"></script>
+<!--F10运营位脚本-->
+<script type="text/javascript" src="http://s.thsi.cn/js/basic/stock/append_v3.js"></script>
+<script type="text/javascript" src="http://s.thsi.cn/cb?/js/navigation/;jquery.bgiframe.min.js;jquery.ui.position.min.js"></script>
+<script type="text/javascript" src="http://s.thsi.cn/cb?js/basic/stock/;json2.js;autocomplete_v2-2.js;search_v3.js;search-guide.js"></script>
+<script type="text/javascript" src="http://s.thsi.cn//sns/sea-modules/gallery/ckplayer6.7/ckplayer/ckplayer-homepage.js"></script>
+<script type="text/javascript" src="http://s.thsi.cn/cb?js/basic/stock/tableSorter_v6.20170511.js;js/basic/stock/company_v2.20180129.js;js/basic/stock/pagescroll.js"></script>
+<script type="text/javascript" src="http://s.thsi.cn/js/basic/stock/userevaluate_v3.js"></script>
+<script type="text/javascript" src="http://s.thsi.cn/js/basic/stock/jquery-ui.min.js"></script>
+<script type="text/javascript" src="http://s.thsi.cn/js/basic/stock/highcharts.js"></script>
+<script type="text/javascript" src="http://s.thsi.cn/js/basic/stock/patentData.20180130.js"></script>
+<script type="text/javascript" src="http://s.thsi.cn/js/basic/stock/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="http://s.thsi.cn/js/basic/stock/jquery.mCustomScrollbar.min.js"></script>
+<script type="text/javascript" src="http://s.thsi.cn/js/basic/stock/product_cmper.js"></script>
+<script type="text/javascript" src="http://s.thsi.cn/js/basic/stock/pop_v2.js"></script>
+<!--工商数据-->
+<script type="text/javascript" src="http://s.thsi.cn/cb?js/home/v5/thirdpart/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="http://s.thsi.cn/js/basic/stock/instajax_v2-3.20180403.js"></script>
+<script>
+//F10客户端结点设置
+function setClientCacheData() {
+    try { //判断是否在客户端，存入结点
+        external.createObject('Util');
+        window.API.use({
+            method: 'Util.getHxVer',
+            success: function(data) {
+                var hexinVer = getVersionStr(data);
+                var pathname = window.location.pathname
+                pathname = pathname.replace(/\/\d{2,3}\//, '/%4/');
+                pathname = pathname.replace(/\/\d{6}\//, '/%6/');
+                //dalert(hexinVer);//上线注意，测试版版本86080  正式版 86090 请注意
+                if (hexinVer >= 86080) {
+                    window.API.use({
+                        method: 'Info.cacheInfoData',
+                        data: ['f10_client_node', 'http://basic.10jqka.com.cn' + pathname],
+                        success: function() {
+                        }
+                    })
+                } else {
+                    window.API.use({
+                        method: 'Info.cacheInfoData',
+                        data: ['', 'http://basic.10jqka.com.cn/' + pathname],
+                        success: function() {
+                        }
+                    })
+                }
+            }
+        })
+    } catch (e) {
+		
+    }
+	try { 
+		callNativeHandler('getMacVer', {}, function(data){
+			if (data.plaform='mac' && data.version>='1.3.0' ) {
+				var pathname = window.location.pathname
+                pathname = pathname.replace(/\/\d{2,3}\//, '/%4/');
+                pathname = pathname.replace(/\/\d{6}\//, '/%6/');
+				callNativeHandler('cache_info_Data', {
+					'f10_client_node': 'http://basic.10jqka.com.cn' + pathname
+				}, function(data){
+				}); 
+			}
+		});  
+	} catch (e) {
+		
+    }
+}
+setClientCacheData();
+</script>
+<script type="text/javascript" src="http://s.thsi.cn/js/basic/stock/stockpage_v2.20180124.js"></script>
+<script type="text/javascript">
+var sid = 'F10new_gszl';
+var fid = 'F10,F10master,F10main,F10new';
+var stockcode = '300109';
+if (window.location.href.indexOf('interactive')<0 
+		&&window.location.href.indexOf('dupont')<0) {
+    $(".subnav .skipto").each(function(){
+    	sonnav = $(this).attr('nav');
+    	if ($("#"+sonnav).length>0 || $("[idchange='"+sonnav+"']").length>0) {
+    	} else {
+    		$(this).hide();
+    	}
+    })
+}
+if (stockcode.substr(0,2) == '43' || stockcode.substr(0,2) == '83') {
+	var third_sid = sid+'_thirdboard';
+	var third_fid = fid+'_thirdboard';
+    PA.setStartTime(loadTimer);
+	PA.init({'id':third_sid, 'fid':third_fid, 'stockcode':stockcode});
+}
+$(document).ready(function(){
+var hash = window.location.hash.substring(1); 
+var hashArray = hash.split('-');
+if(hashArray[0]  == 'position'){
+	$("#sortNav li").eq(hashArray[1]).find("a").click();
+}  
+});
+try {
+    external.createObject('Util');
+    window.API.use({
+        method: 'Passport.get',
+        data: ['m_qs'],
+        success: function(data) {
+            var qsid = data
+            if (qsid == '114') {
+                $("#f10_top_ad").hide();
+                $("#r-go-top").hide();
+            }
+        }
+    })
+} catch (e) {}
+if (!isIE6()) {
+    $(".m_box").statload();
+}
+try {
+    external.createObject('Util');
+    window.API.use({
+        method: 'Passport.get',
+        data: 'm_qs',
+        success: function(data) {
+            var qsid = data
+            if (qsid < 800) {
+                fid += ',f10new_qs';
+            } else {
+                fid += ',f10new_fqs';
+            }
+            PA.setStartTime(loadTimer);
+            setTimeout(function(){
+                PA.init({
+                    'id': sid,
+                    'fid': fid,
+                    'stockcode': stockcode,
+                    'qsid': qsid
+                });
+            },100)
+        }
+    })
+} catch (e) {
+    PA.setStartTime(loadTimer);
+    PA.init({
+        'id': sid,
+        'fid': fid,
+        'stockcode': stockcode
+    });
+}
+try {
+    external.createObject('Util');
+    var externalSessionId = window.API.createSessionId('external');
+    window.API.use({
+        method: 'external.registerEvent',
+        data: 'onshow',
+        sessionId: externalSessionId,
+        persistent: true,
+        callbackName: 'onshow',
+        success: function(data) {
+            if (!data) {
+                 PA.setStartTime(loadTimer);
+                 PA.init({
+                    'id': sid,
+                    'fid': fid,
+                    'stockcode': stockcode,
+                    'hide': 1,
+                    'nj': 1,
+                    _sid: "__ths_onshow"
+                });
+            }
+        }
+    })
+} catch (e) {}
+</script>
+<div style="display:none"><script type="text/javascript">
+(function(){
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F78c58f01938e4d85eaf619eae71b4ed1' type='text/javascript'%3E%3C/script%3E"));
+});
+</script>
+<script type="text/javascript" src="http://s.thsi.cn/js/basic/stock/f10hq_v4-2.20171227.js"></script>
+</div>
+<!--F10头部广告-->
+<!--<div id="f10_top_ad" class="f10_ad_top none"><script type="text/javascript">CNZZ_SLOT_RENDER('297563');</script></div>-->
+</html>	

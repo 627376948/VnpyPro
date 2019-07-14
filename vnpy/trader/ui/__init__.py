@@ -3,12 +3,12 @@ import platform
 import sys
 import traceback
 
-import qdarkstyle
 from PyQt5 import QtGui, QtWidgets, QtCore
+import qdarkstyle
 
-from .mainwindow import MainWindow
 from ..setting import SETTINGS
 from ..utility import get_icon_path
+from .mainwindow import MainWindow
 
 
 def excepthook(exctype, value, tb):
@@ -24,7 +24,7 @@ def excepthook(exctype, value, tb):
     )
 
 
-def create_qapp(app_name: str = "VN Trader"):
+def create_qapp(app_name: str = "VN Pro"):
     """
     Create Qt Application.
     """
@@ -36,7 +36,7 @@ def create_qapp(app_name: str = "VN Trader"):
     font = QtGui.QFont(SETTINGS["font.family"], SETTINGS["font.size"])
     qapp.setFont(font)
 
-    icon = QtGui.QIcon(get_icon_path(__file__, "vnpy.ico"))
+    icon = QtGui.QIcon(get_icon_path(__file__, "vnpro.ico"))
     qapp.setWindowIcon(icon)
 
     if "Windows" in platform.uname():

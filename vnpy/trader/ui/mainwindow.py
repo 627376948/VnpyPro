@@ -2,14 +2,17 @@
 Implements main window of VN Trader.
 """
 
-import webbrowser
 from functools import partial
 from importlib import import_module
 from typing import Callable
+import webbrowser
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 from vnpy.event import EventEngine
+
+from ..engine import MainEngine
+from ..utility import get_icon_path, TRADER_DIR
 from .widget import (
     TickMonitor,
     OrderMonitor,
@@ -24,8 +27,6 @@ from .widget import (
     AboutDialog,
     GlobalDialog
 )
-from ..engine import MainEngine
-from ..utility import get_icon_path, TRADER_DIR
 
 
 class MainWindow(QtWidgets.QMainWindow):
@@ -39,7 +40,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.main_engine = main_engine
         self.event_engine = event_engine
 
-        self.window_title = f"VN Trader [{TRADER_DIR}]"
+        self.window_title = f"VN Pro [{TRADER_DIR}]"
 
         self.connect_dialogs = {}
         self.widgets = {}

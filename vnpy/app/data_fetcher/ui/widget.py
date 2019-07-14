@@ -684,7 +684,6 @@ class QA_GUI_Selected_TaskQueue(QtCore.QThread):
     # 定义一个信号,
     trigger_all_task_start = QtCore.pyqtSignal(str)
     trigger_all_task_done = QtCore.pyqtSignal(str)
-
     # 定义任务（每个是一个线程）
     QA_GUI_Task_List = []
 
@@ -736,8 +735,7 @@ class DataFetchWidget(QtWidgets.QWidget):
         |---------------------------|
         :return:
         '''
-
-        self.setWindowIconText("获取数据任务列表")
+        self.setWindowTitle("数据本地化")
         self.setObjectName("data_maintenance")
         QtCore.QMetaObject.connectSlotsByName(self)
 
@@ -750,9 +748,8 @@ class DataFetchWidget(QtWidgets.QWidget):
 
         self.logDisplay.setObjectName("tableForLog")
         self.logDisplay.setColumnCount(2)
-        self.logDisplay.setHorizontalHeaderLabels(['日志内容', '来源'])
-        self.logDisplay.setColumnWidth(0, 700)
-        self.logDisplay.setColumnWidth(1, 100)
+        self.logDisplay.setHorizontalHeaderLabels(['来源', '日志内容'])
+        self.logDisplay.setMinimumWidth(1400)
         self.gridLayut = QtWidgets.QGridLayout()
         self.taskListLayout = QtWidgets.QVBoxLayout()
         self.logListLayout = QtWidgets.QVBoxLayout()
@@ -761,7 +758,6 @@ class DataFetchWidget(QtWidgets.QWidget):
         self.gridLayut.addLayout(self.taskListLayout, 0, 0, 1, 1)
         self.gridLayut.addLayout(self.logListLayout, 0, 1, 1, 1)
 
-        self.gridLayut.setColumnMinimumWidth(1, 1400)
         '''
         void QGridLayout::addLayout(QLayout *layout, int row, int column, int rowSpan, int columnSpan, Qt::Alignment alignment = Qt::Alignment())
         This is an overloaded function.
@@ -850,6 +846,7 @@ class DataFetchWidget(QtWidgets.QWidget):
 
         # 为这个tab命名显示出来，第一个参数是哪个标签，第二个参数是标签的名字
         # 在标签1中添加这个帧布局
+        self.showMaximized()
 
     def outputWritten(self, text):
         # 🛠todo logDisplay QTableWidget
@@ -1233,8 +1230,6 @@ class DataFetchWidget(QtWidgets.QWidget):
         #    self.job01_save_stock_day.start()
         self.selectedSubTask.start()
 
-        pass
-
     def doStopTask(self):
         msg = QtWidgets.QMessageBox()
         msg.setIcon(QtWidgets.QMessageBox.Information)
@@ -1246,8 +1241,6 @@ class DataFetchWidget(QtWidgets.QWidget):
 
     def uiAllTaskStart(self, logInfo):
         self.bntExecute.setEnabled(False)
-        pass
 
     def uiAllTaskDone(self, logInfo):
         self.bntExecute.setEnabled(True)
-        pass
