@@ -1,7 +1,6 @@
 
-from datetime import datetime
-import csv
 
+from conda._vendor.auxlib._vendor.five import keys
 import pymongo
 
 from vnpy.event import EventEngine
@@ -18,16 +17,21 @@ class DbViewEngine(BaseEngine):
     def __init__(self, main_engine: MainEngine, event_engine: EventEngine):
         """"""
         super().__init__(main_engine, event_engine, APP_NAME)
+        self.app_engine = self.main_engine.get_engine(APP_NAME)
+        self.main_engine = main_engine
+        self.event_engine = event_engine
         self.username = SETTINGS["database.user"]
         self.password = SETTINGS["database.password"]
         self.host = SETTINGS["database.host"]
         self.port = SETTINGS["database.port"]
         self.authentication_source = SETTINGS["database.authentication_source"]
+        self.col_names = []
         try:
             self.db_client = pymongo.MongoClient(self.host, int(self.port))
             self.avtive = True
             self.update_db_info()
         except Exception as e:
+            self.write_log("打开数据库失败{self.host}{self.port}")
             self.avtive = False
 
     def update_db_info(self):
@@ -47,13 +51,15 @@ class DbViewEngine(BaseEngine):
 
     def write_log(self, msg):
         print(msg)
-        pass
 
     def get_db_names(self):
         return self.dbs
 
     def get_collections_by_dbname(self, db_name):
         return self.db_client[db_name].list_collection_names()
+
+    def get_column_names(self):
+        return self.col_names
 
     def get_collection_info(self, db_name, collection_name):
 
@@ -62,29 +68,29 @@ class DbViewEngine(BaseEngine):
         except Exception as e:
             self.write_log("无法获取sample")
             return []
-
         res = {
             "集合名称": collection_name,
             "所属数据库": db_name,
             "占用空间": f'{self.db_client[db_name].validate_collection(collection_name)["datasize"] / 1024 / 1024:.2f}M',
             "数据总量": str(self.db_client[db_name][collection_name].estimated_document_count())
         }
-#         if "datetime" in sample.keys():
-#             r = list(self.db_client[db_name][collection_name].find(
-#                 sort=[("datetime", 1)], limit=1))
-#             res["起始时间"] = str(r[0]["datetime"])
-#             r = list(self.db_client[db_name][collection_name].find(
-#                 sort=[("datetime", -1)], limit=1))
-#             res["截至时间"] = str(r[0]["datetime"])
+        keys = list(sample)if sample else []
+        res["列名集合"] = str(keys)
+        self.col_names = keys
         self.collection_info = res
         return res
 
     def get_data(self, db_name, collection_name, flt={}, limit=100):
         try:
-            d = list(self.db_client[db_name][collection_name].find(
-                flt,
-                {"_id": 0},
-                limit=limit))
+            if limit:
+                d = list(self.db_client[db_name][collection_name].find(
+                    flt,
+                    {"_id": 0},
+                    limit=limit))
+            else:
+                d = list(self.db_client[db_name][collection_name].find(
+                    flt,
+                    {"_id": 0}))
             return d
         except Exception as e:
             self.write_log(f"查到失败{db_name}.{collection_name}:{flt}")

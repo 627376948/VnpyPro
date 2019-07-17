@@ -300,7 +300,7 @@ class DataFrameMonitor(BasicMonitor):
     """
     name = u"DataFrame监控"
 
-    def __init__(self,  eventEngine, mainEngine, parent=None):
+    def __init__(self,   mainEngine, eventEngine, parent=None):
         """Constructor"""
         super(DataFrameMonitor, self).__init__(mainEngine, eventEngine, parent)
         # 列宽调整状态（只在第一次更新数据时调整一次列宽）
@@ -308,7 +308,7 @@ class DataFrameMonitor(BasicMonitor):
         # 保存数据对象到单元格
         self.saveData = False
         # 默认不允许根据表头进行排序，需要的组件可以开启
-        self.sorting = False
+        self.sorting = True
         # 初始化右键菜单
         self.setEventType(EVENT_DISPLAY_DATAFRAME)
         self.registerEvent()

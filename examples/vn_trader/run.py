@@ -5,6 +5,7 @@ from vnpy.app.csv_loader import CsvLoaderApp
 from vnpy.app.cta_backtester import CtaBacktesterApp
 from vnpy.app.cta_strategy import CtaStrategyApp
 from vnpy.app.data_fetcher import DataFetchApp
+from vnpy.app.db_viewer import DbViewApp
 from vnpy.app.rpc_service import RpcServiceApp
 from vnpy.event import EventEngine
 from vnpy.trader.engine import MainEngine
@@ -61,6 +62,7 @@ def main():
     # main_engine.add_gateway(TapGateway)
     # main_engine.add_gateway(ToraGateway)
     # main_engine.add_gateway(AlpacaGateway)
+    main_engine.add_app(DbViewApp)
     main_engine.add_app(DataFetchApp)
     main_engine.add_app(CtaStrategyApp)
     main_engine.add_app(CtaBacktesterApp)
