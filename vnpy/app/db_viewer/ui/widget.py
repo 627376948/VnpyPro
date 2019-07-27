@@ -1,18 +1,11 @@
-# -*- coding: utf-8 -*-
-
 # Form implementation generated from reading ui file 'C:\Users\Thinkpad\Desktop\UI\untitled.ui'
 #
 # Created by: PyQt5 UI code generator 5.11.3
 #
 # WARNING! All changes made in this file will be lost!
 
-from typing import Callable
 import datetime
 from PyQt5 import QtCore, QtGui, QtWidgets
-from numpy.core.defchararray import startswith
-from xlsxwriter.utility import COL_NAMES
-from xlwings.utils import col_name
-
 from vnpy.app.db_viewer.ui.extWidget import DataFrameMonitor
 from vnpy.trader.utility import get_icon_path
 
@@ -204,13 +197,23 @@ class DbViewWidget(QtWidgets.QWidget):
                 datalist = self.appengine.get_data(
                     parent.text(0), item.text(0), limit=self.qry_dialog.form["limit"])
             elif not self.qry_dialog.form["match_date"]:
-                flt = {self.qry_dialog.form["feild"]: self.qry_dialog.form["match"]}
+                flt = {self.qry_dialog.form["feild"]
+                    : self.qry_dialog.form["match"]}
                 datalist = self.appengine.get_data(
                     parent.text(0), item.text(0), flt=flt, limit=self.qry_dialog.form["limit"])
-            else:
-                flt = {self.qry_dialog.form["feild"]: self.qry_dialog.form["match"]}
-                start = self.qry_dialog.form["date_start"].strftime('%Y-%m-%d')
-                end = self.qry_dialog.form["date_end"].strftime('%Y-%m-%d')
+            elif self.qry_dialog.form["match_date"]:
+                if self.qry_dialog.form["match"]:
+                    flt = {self.qry_dialog.form["feild"]
+                        : self.qry_dialog.form["match"]}
+                else:
+                    flt = {}
+                sample = self.appengine.find_sample(parent.text(0),
+                                                    item.text(0))
+                datetime_mode = str(sample[self.qry_dialog.form["date_feild"]])
+                start = self.appengine.strftime_by_modestr(self.qry_dialog.form["date_start"],
+                                                           datetime_mode)
+                end = self.appengine.strftime_by_modestr(self.qry_dialog.form["date_end"],
+                                                         datetime_mode)
                 flt[self.qry_dialog.form["date_feild"]] = {
                     "$gte": start, "$lte": end}
 

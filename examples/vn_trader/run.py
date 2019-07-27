@@ -7,6 +7,7 @@ from vnpy.app.cta_strategy import CtaStrategyApp
 from vnpy.app.data_fetcher import DataFetchApp
 from vnpy.app.db_viewer import DbViewApp
 from vnpy.app.rpc_service import RpcServiceApp
+from vnpy.app.tool_box import ToolBoxApp
 from vnpy.event import EventEngine
 from vnpy.trader.engine import MainEngine
 from vnpy.trader.ui import MainWindow, create_qapp
@@ -67,6 +68,7 @@ def main():
     main_engine.add_app(CtaStrategyApp)
     main_engine.add_app(CtaBacktesterApp)
     main_engine.add_app(CsvLoaderApp)
+    main_engine.add_app(ToolBoxApp)
 #     main_engine.add_app(AlgoTradingApp)
 #     main_engine.add_app(DataRecorderApp)
 #     main_engine.add_app(RiskManagerApp)

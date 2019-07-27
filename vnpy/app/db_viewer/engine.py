@@ -1,6 +1,6 @@
 
+import datetime
 
-from conda._vendor.auxlib._vendor.five import keys
 import pymongo
 
 from vnpy.event import EventEngine
@@ -61,24 +61,46 @@ class DbViewEngine(BaseEngine):
     def get_column_names(self):
         return self.col_names
 
-    def get_collection_info(self, db_name, collection_name):
-
+    def find_sample(self, db_name, collection_name):
         try:
-            sample = self.db_client[db_name][collection_name].find_one()
+            return self.db_client[db_name][collection_name].find_one()
         except Exception as e:
             self.write_log("无法获取sample")
             return []
-        res = {
-            "集合名称": collection_name,
-            "所属数据库": db_name,
-            "占用空间": f'{self.db_client[db_name].validate_collection(collection_name)["datasize"] / 1024 / 1024:.2f}M',
-            "数据总量": str(self.db_client[db_name][collection_name].estimated_document_count())
-        }
-        keys = list(sample)if sample else []
-        res["列名集合"] = str(keys)
-        self.col_names = keys
-        self.collection_info = res
-        return res
+
+    def get_collection_info(self, db_name, collection_name):
+
+        sample = self.find_sample(db_name, collection_name)
+        if sample:
+            res = {
+                "集合名称": collection_name,
+                "所属数据库": db_name,
+                "占用空间": f'{self.db_client[db_name].validate_collection(collection_name)["datasize"] / 1024 / 1024:.2f}M',
+                "数据总量": str(self.db_client[db_name][collection_name].estimated_document_count())
+            }
+            keys = list(sample)if sample else []
+            res["列名集合"] = str(keys)
+            self.col_names = keys
+            self.collection_info = res
+            return res
+        else:
+            return []
+
+    def strftime_by_modestr(self, datetime_, mode_str):
+        """"""
+        modes = [
+            '%Y-%m-%d %H:%M:%S',
+            '%Y/%m/%d %H:%M:%S',
+            '%Y%m%d%H%M%S',
+            '%Y-%m-%d',
+            '%Y%m%d']
+
+        for mode in modes:
+            try:
+                datetime.datetime.strptime(mode_str, mode)
+                return datetime.datetime.strftime(datetime_, mode)
+            except ValueError:
+                pass
 
     def get_data(self, db_name, collection_name, flt={}, limit=100):
         try:
@@ -93,12 +115,15 @@ class DbViewEngine(BaseEngine):
                     {"_id": 0}))
             return d
         except Exception as e:
-            self.write_log(f"查到失败{db_name}.{collection_name}:{flt}")
+            self.write_log(f"查询失败{db_name}.{collection_name}:{flt}")
             return []
 
 
 if __name__ == '__main__':
-    engine = DbViewEngine(None, None)
+    from vnpy.trader.engine import MainEngine, EventEngine
+    ee = EventEngine()
+    me = MainEngine(ee)
+    engine = DbViewEngine(me, ee)
     engine.update_db_info()
     print(engine.get_db_names())
     print(engine.db_info["连接地址"])
@@ -114,3 +139,8 @@ if __name__ == '__main__':
     info = [f"{k}:{v}" for k, v in engine.get_collection_info(
         "quantaxis", "stock_day").items()]
     print(info)
+    now = datetime.date.today()
+    print(engine.strftime_by_modestr(now, "2019-10-10 12:00:00"))
+    d = engine.find_sample("quantaxis", "index_day")
+    print(engine.strftime_by_modestr(now, d["date"]))
+    ee.stop()

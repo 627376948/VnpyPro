@@ -735,7 +735,8 @@ class DataFetchWidget(QtWidgets.QWidget):
         |---------------------------|
         :return:
         '''
-        self.setWindowTitle("数据本地化")
+
+        self.setWindowIconText("获取数据任务列表")
         self.setObjectName("data_maintenance")
         QtCore.QMetaObject.connectSlotsByName(self)
 
@@ -748,8 +749,9 @@ class DataFetchWidget(QtWidgets.QWidget):
 
         self.logDisplay.setObjectName("tableForLog")
         self.logDisplay.setColumnCount(2)
-        self.logDisplay.setHorizontalHeaderLabels(['来源', '日志内容'])
-        self.logDisplay.setMinimumWidth(1400)
+        self.logDisplay.setHorizontalHeaderLabels(['日志内容', '来源'])
+        self.logDisplay.setColumnWidth(0, 700)
+        self.logDisplay.setColumnWidth(1, 100)
         self.gridLayut = QtWidgets.QGridLayout()
         self.taskListLayout = QtWidgets.QVBoxLayout()
         self.logListLayout = QtWidgets.QVBoxLayout()
@@ -758,6 +760,7 @@ class DataFetchWidget(QtWidgets.QWidget):
         self.gridLayut.addLayout(self.taskListLayout, 0, 0, 1, 1)
         self.gridLayut.addLayout(self.logListLayout, 0, 1, 1, 1)
 
+        self.gridLayut.setColumnMinimumWidth(1, 1400)
         '''
         void QGridLayout::addLayout(QLayout *layout, int row, int column, int rowSpan, int columnSpan, Qt::Alignment alignment = Qt::Alignment())
         This is an overloaded function.
@@ -846,7 +849,6 @@ class DataFetchWidget(QtWidgets.QWidget):
 
         # 为这个tab命名显示出来，第一个参数是哪个标签，第二个参数是标签的名字
         # 在标签1中添加这个帧布局
-        self.showMaximized()
 
     def outputWritten(self, text):
         # 🛠todo logDisplay QTableWidget

@@ -23,12 +23,13 @@
 # SOFTWARE.
 
 import datetime
-import pandas as pd
 
 from QUANTAXIS.QAUtil.QAParameter import MARKET_TYPE
 
-# todo 🛠 只记录非交易日，其余的用程序迭代 生成交易日
+import pandas as pd
 
+
+# todo 🛠 只记录非交易日，其余的用程序迭代 生成交易日
 trade_date_sse = [
     '1990-12-19',
     '1990-12-20',
@@ -7132,6 +7133,7 @@ trade_date_sse = [
     '2019-12-31'
 ]
 
+
 def QA_util_format_date2str(cursor_date):
     """
     对输入日期进行格式化处理，返回格式为 "%Y-%m-%d" 格式字符串
@@ -7188,7 +7190,6 @@ def QA_util_get_pre_trade_date(cursor_date, n=1):
     return QA_util_date_gap(real_aft_trade_date, n, "lt")
 
 
-
 def QA_util_if_trade(day):
     '''
     '日期是否交易'
@@ -7223,16 +7224,16 @@ def QA_util_if_tradetime(
                 return False
         else:
             return False
-    elif market is MARKET_TYPE.FUTURE_CN:                              
-        date_today=str(_time.date())    
-        date_yesterday=str((_time-datetime.timedelta(days=1)).date())                         
-        
-        is_today_open=QA_util_if_trade(date_today)
-        is_yesterday_open=QA_util_if_trade(date_yesterday)
-        
-        #考虑周六日的期货夜盘情况
-        if is_today_open==False: #可能是周六或者周日
-            if is_yesterday_open==False or (_time.hour > 2 or _time.hour == 2 and _time.minute > 30):
+    elif market is MARKET_TYPE.FUTURE_CN:
+        date_today = str(_time.date())
+        date_yesterday = str((_time - datetime.timedelta(days=1)).date())
+
+        is_today_open = QA_util_if_trade(date_today)
+        is_yesterday_open = QA_util_if_trade(date_yesterday)
+
+        # 考虑周六日的期货夜盘情况
+        if is_today_open == False:  # 可能是周六或者周日
+            if is_yesterday_open == False or (_time.hour > 2 or _time.hour == 2 and _time.minute > 30):
                 return False
 
         shortName = ""                      # i , p
@@ -7247,7 +7248,7 @@ def QA_util_if_tradetime(
             [10, 30, 11, 30],
             [13, 30, 15, 0]
         ]
-        
+
         if (shortName in ["IH", 'IF', 'IC']):
             period = [
                 [9, 30, 11, 30],
@@ -7258,29 +7259,30 @@ def QA_util_if_tradetime(
                 [9, 15, 11, 30],
                 [13, 0, 15, 15]
             ]
-        
-        if 0<=_time.weekday<=4:
+
+        if 0 <= _time.weekday <= 4:
             for i in range(len(period)):
                 p = period[i]
                 if ((_time.hour > p[0] or (_time.hour == p[0] and _time.minute >= p[1])) and (_time.hour < p[2] or (_time.hour == p[2] and _time.minute < p[3]))):
                     return True
 
-        #最新夜盘时间表_2019.03.29
+        # 最新夜盘时间表_2019.03.29
         nperiod = [
             [
                 ['AU', 'AG', 'SC'],
-                [21, 0, 2, 30]  
+                [21, 0, 2, 30]
             ],
             [
                 ['CU', 'AL', 'ZN', 'PB', 'SN', 'NI'],
-                [21, 0, 1, 0]   
+                [21, 0, 1, 0]
             ],
             [
-                ['RU', 'RB', 'HC', 'BU','FU','SP'],
+                ['RU', 'RB', 'HC', 'BU', 'FU', 'SP'],
                 [21, 0, 23, 0]
             ],
             [
-                ['A', 'B', 'Y', 'M', 'JM', 'J', 'P', 'I', 'L', 'V', 'PP', 'EG', 'C', 'CS'],
+                ['A', 'B', 'Y', 'M', 'JM', 'J', 'P', 'I',
+                    'L', 'V', 'PP', 'EG', 'C', 'CS'],
                 [21, 0, 23, 0]
             ],
             [
@@ -7293,8 +7295,10 @@ def QA_util_if_tradetime(
             for j in range(len(nperiod[i][0])):
                 if nperiod[i][0][j] == shortName:
                     p = nperiod[i][1]
-                    condA = _time.hour > p[0] or (_time.hour == p[0] and _time.minute >= p[1])
-                    condB = _time.hour < p[2] or (_time.hour == p[2] and _time.minute < p[3])
+                    condA = _time.hour > p[0] or (
+                        _time.hour == p[0] and _time.minute >= p[1])
+                    condB = _time.hour < p[2] or (
+                        _time.hour == p[2] and _time.minute < p[3])
                     # in one day
                     if p[2] >= p[0]:
                         if ((_time.weekday >= 0 and _time.weekday <= 4) and condA and condB):
