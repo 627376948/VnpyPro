@@ -1,11 +1,11 @@
 # encoding: UTF-8
-
 '''
 app记录模块相关的GUI控制组件
 '''
 import datetime
 import inspect
-import os
+import os, sys
+sys.path.append(r"F:\9.workspace\VnpyPro")
 
 from PyQt5 import QtWidgets, QtCore, QtGui
 
@@ -57,8 +57,8 @@ class ToolBoxWidget(QtWidgets.QWidget):
         self.groupBox_2.setObjectName("groupBox_2")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.groupBox_2)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.output_result = DataFrameMonitor(
-            self.main_engine, self.event_engine)
+        self.output_result = DataFrameMonitor(self.main_engine,
+                                              self.event_engine)
         self.output_result.sorting = True
         self.verticalLayout.addWidget(self.output_result)
         self.output_log = QtWidgets.QTextBrowser(self.groupBox_2)
@@ -80,11 +80,11 @@ class ToolBoxWidget(QtWidgets.QWidget):
         appfuncs = dir(self.app_engine)
         func_names = [x for x in appfuncs if x.startswith("do_")]
         for func_name in func_names:
-            item = QtWidgets.QListWidgetItem(
-                QtGui.QIcon(self.icon_file_path), CHINESE[func_name])
+            item = QtWidgets.QListWidgetItem(QtGui.QIcon(self.icon_file_path),
+                                             CHINESE[func_name])
             self.listWidget.addItem(item)
-#             self.listWidget.addItem(
-#                 QtWidgets.QListWidgetItem(CHINESE[func_name]))
+            #             self.listWidget.addItem(
+            #                 QtWidgets.QListWidgetItem(CHINESE[func_name]))
             func = getattr(self.app_engine, func_name)
             b = inspect.getfullargspec(func)
             kwargs = []
@@ -100,8 +100,8 @@ class ToolBoxWidget(QtWidgets.QWidget):
         begin = datetime.datetime.now()
         self.write_log(f"函数执行开始：{str(begin)}")
         func = getattr(self.app_engine, func_name)
-#         print(f"函数执行开始：{str(begin)}:{func.__name__}")
-#         print(f"函数执行开始：{str(begin)}:{str(kwargs)}")
+        #         print(f"函数执行开始：{str(begin)}:{func.__name__}")
+        #         print(f"函数执行开始：{str(begin)}:{str(kwargs)}")
         res = func(**kwargs)
         print(str(res[0]))
         if res[0]:
@@ -127,6 +127,8 @@ class ToolBoxWidget(QtWidgets.QWidget):
         self.listWidget.currentRowChanged.connect(self.change_inputer)
         self.listWidget.doubleClicked.connect(self.display_inputer)
         self.output_result.cellDoubleClicked.connect(self.open_file)
+
+
 #         self.search_thread.reslut_signal.connect(self.update_reslut)
 #         self.search_thread.log_signal.connect(self.write_log)
 
@@ -151,14 +153,13 @@ class ToolBoxWidget(QtWidgets.QWidget):
         # 点击的是第二列
         if y == 1:
             try:
-                os.startfile(os.path.split(
-                    self.output_result.item(x, 1).text())[0])
+                os.startfile(
+                    os.path.split(self.output_result.item(x, 1).text())[0])
             except Exception as e:
                 self.write_log(e)
 
     def init_menu(self):
         """"""
-
         def clear_xls():
             """"""
             items = self.output_result.selectedItems()
@@ -172,14 +173,13 @@ class ToolBoxWidget(QtWidgets.QWidget):
 
     def keyPressEvent(self, event):
         """"""
-
         def show_searcher_widget():
             """"""
             if self.file_viewer:
                 self.file_viewer.show()
             else:
-                self.file_viewer = FileViewer(
-                    self.app_engine, self.event_engine, None)
+                self.file_viewer = FileViewer(self.app_engine,
+                                              self.event_engine, None)
                 self.file_viewer.show()
 
         if QtWidgets.QApplication.keyboardModifiers() == QtCore.Qt.AltModifier \
@@ -188,7 +188,6 @@ class ToolBoxWidget(QtWidgets.QWidget):
 
 
 class Inputer(QtWidgets.QWidget):
-
     def __init__(self, func_name, kwagrs_tuple, parent=None):
         super(Inputer, self).__init__(parent)
         self.parent = parent
@@ -218,7 +217,7 @@ class Inputer(QtWidgets.QWidget):
         for tuple in self.kwagrs_tuple:
             name, value = tuple
             text = QtWidgets.QLabel(CHINESE[name])
-#             self.setting.update({name: value})
+            #             self.setting.update({name: value})
             value = self.setting.get(name, value)
             d = {}
             self.vbox.addWidget(text)
@@ -232,8 +231,9 @@ class Inputer(QtWidgets.QWidget):
                 d = self.input_str
             d[name] = QtWidgets.QLineEdit(str(value))
             self.vbox.addWidget(d[name])
-        spacerItem = QtWidgets.QSpacerItem(
-            20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        spacerItem = QtWidgets.QSpacerItem(20, 40,
+                                           QtWidgets.QSizePolicy.Minimum,
+                                           QtWidgets.QSizePolicy.Expanding)
         self.vbox.addItem(spacerItem)
 
     def register_event(self):
@@ -271,14 +271,15 @@ class Inputer(QtWidgets.QWidget):
     def load_setting(self):
         """"""
         all_setting = self.app_engine.load_setting()
-        func_setting = {k.split(".")[1]: v for k,
-                        v in all_setting.items() if f"{self.func_name}." in k}
+        func_setting = {
+            k.split(".")[1]: v
+            for k, v in all_setting.items() if f"{self.func_name}." in k
+        }
         self.setting.update(func_setting)
 
     def save_setting(self, dict):
         """"""
-        d = {f"{self.func_name}.{k}": v for k,
-             v in dict.items()}
+        d = {f"{self.func_name}.{k}": v for k, v in dict.items()}
         self.app_engine.save_setting(d)
 
     @property
@@ -309,8 +310,8 @@ class WorkThread(QtCore.QThread):
             begin = datetime.datetime.now()
             self.log_signal.emit(f"查询开始：{str(begin)}")
             self.active = True
-            res = self.app_wideget.active_function(
-                self.func_name, **self.kwargs)
+            res = self.app_wideget.active_function(self.func_name,
+                                                   **self.kwargs)
             if res[0]:
                 self.reslut_signal.emit(res[1])
             else:
@@ -325,7 +326,6 @@ class WorkThread(QtCore.QThread):
 
 
 class FileViewer(QtWidgets.QWidget):
-
     def __init__(self, app_engine, event_engine, parent=None):
         super(FileViewer, self).__init__(parent)
         self.app_engine = app_engine
@@ -334,6 +334,8 @@ class FileViewer(QtWidgets.QWidget):
         # 初始化ui
         self.init_ui()
         # 初始化设置
+
+
 #         self.load_setting()
 #         # 注册事件
 #         self.register_event()
@@ -396,19 +398,21 @@ class FileViewer(QtWidgets.QWidget):
 
     def qry_keywords(self):
         try:
-            resluts = self.app_engine.qry_xls_info(self.lineEdit.text(),
-                                                   self.comboBox_data_table.currentText(),
-                                                   self.comboBox_field.currentText())
+            resluts = self.app_engine.qry_xls_info(
+                self.lineEdit.text(), self.comboBox_data_table.currentText(),
+                self.comboBox_field.currentText())
             self.tableView.update_by_list(resluts)
         except Exception as e:
-            error_msg = [
-                {"提示": "查询报错", "说明": "查无此信息，输入关键字没有找到匹配项", "具体报错": str(e)}]
+            error_msg = [{
+                "提示": "查询报错",
+                "说明": "查无此信息，输入关键字没有找到匹配项",
+                "具体报错": str(e)
+            }]
             self.tableView.update_by_list(error_msg)
 
     def keyPressEvent(self, event):
         if event.key() == QtCore.Qt.Key_Escape:
             self.close()
-
 
 if __name__ == '__main__':
     from vnpy.app.tool_box import ToolBoxApp

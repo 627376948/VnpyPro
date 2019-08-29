@@ -25,9 +25,6 @@ def get_date_today():
     return datetime.datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
 
 
-jsonPathDict = {}
-
-
 def get_jsonpath(name, moduleFile):
     """
     获取JSON配置文件的路径：
@@ -71,10 +68,6 @@ def inc_num(max_num):
 def inc_name(max_num, key="name"):
     for i in range(max_num):
         yield f"{key}{str(i)}"
-
-
-inc_number = inc_num(999999)
-inc_name = inc_name(999999)
 
 
 def get_new_name(src_name, add_name="_新", is_random=True):
@@ -142,6 +135,10 @@ def un_zip_files(rootdir="C:\\Users\\bjfh-chenjy\\Desktop\\13日\\"):
         for zip_file in sub_zip_files:
             target_queue.put(zip_file)
 
+
+jsonPathDict = {}
+inc_number = inc_num(999999)
+inc_name = inc_name(999999)
 
 if __name__ == "__main__":
     #     un_zip_files(rootdir = "C:\\Users\\bjfh-chenjy\\Desktop\\18日\\第二批")

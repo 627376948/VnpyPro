@@ -7,11 +7,11 @@
 """
 
 
-import datetime
-
-from vnpy.vnpy.trader.constant import Exchange, Interval
-from vnpy.vnpy.trader.object import HistoryRequest
-from vnpy.vnpy.trader.rqdata import RqdataClient
+import datetime,sys
+sys.path.insert(0,r"F:\9.workspace\VnpyPro")
+from vnpy.trader.constant import Exchange, Interval
+from vnpy.trader.object import HistoryRequest
+from vnpy.trader.rqdata import RqdataClient
 
 
 if __name__ == '__main__':
@@ -19,7 +19,7 @@ if __name__ == '__main__':
     rqdata_client = RqdataClient()
 
 # 1m,d
-    vt_symbol = "000001"
+    vt_symbol = "600340"
     start = datetime.datetime(2017, 1, 1)
     end = datetime.datetime(2018, 1, 1)
     interval = Interval.DAILY
@@ -27,4 +27,4 @@ if __name__ == '__main__':
                          interval=interval, exchange=Exchange.SSE)
     print(rqdata_client.init())
     for x in rqdata_client.query_history(req):
-        print(x)
+        print(x.__dict__.get("datetime",None))

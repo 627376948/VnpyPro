@@ -49,8 +49,8 @@ class ToolBoxEngine(BaseEngine):
     def __init__(self, mainEngine, eventEngine):
         """Constructor"""
         super().__init__(mainEngine, eventEngine, APP_NAME)
-        self.mainEngine = mainEngine
-        self.eventEngine = eventEngine
+        self.main_engine = mainEngine
+        self.event_engine = eventEngine
         # 文件查询相关
         self.keywords = []  # 待查询的字符串集合
         self.result_list = []  # 查询结果
